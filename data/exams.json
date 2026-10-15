@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "examenes": [
+    {
+      "id": "denko2",
+      "nombre": "第二種電気工事士",
+      "corto": "電工二種",
+      "lectura": "だいにしゅでんきこうじし",
+      "objetivo": "上期 2027",
+      "resumen": "学科 (CBT) abr–jun 2027 · 技能 mediados de julio 2027. 技能 con 欠陥 eliminatorios.",
+      "temas": [
+        { "id": "kanbetsu", "titulo": "鑑別・図記号", "archivo": "data/denko2-kanbetsu.json" }
+      ],
+      "enlaces": [
+        { "grupo": "学科 2026 上期 (24 may 2026)", "items": [
+          { "texto": "Preguntas (PDF)", "url": "https://www.shiken.or.jp/construction/upload/20260524_co_second_q01.pdf" },
+          { "texto": "Respuestas (PDF)", "url": "https://www.shiken.or.jp/construction/upload/20260524_co_second_a01.pdf" } ] },
+        { "grupo": "学科 2025 下期 (26 oct 2025)", "items": [
+          { "texto": "Preguntas (PDF)", "url": "https://www.shiken.or.jp/construction/upload/20251026_co_second_q01.pdf" },
+          { "texto": "Respuestas (PDF)", "url": "https://www.shiken.or.jp/construction/upload/20251026_co_second_a01.pdf" } ] },
+        { "grupo": "学科 2025 上期 (25 may 2025)", "items": [
+          { "texto": "Preguntas (PDF)", "url": "https://www.shiken.or.jp/construction/upload/20250525_co_second_q01.pdf" },
+          { "texto": "Respuestas (PDF)", "url": "https://www.shiken.or.jp/construction/upload/20250525_co_second_a01.pdf" } ] },
+        { "grupo": "学科 2024 下期 (27 oct 2024)", "items": [
+          { "texto": "Preguntas (PDF)", "url": "https://www.shiken.or.jp/construction/upload/20241027_co_second_q01.pdf" },
+          { "texto": "Respuestas (PDF)", "url": "https://www.shiken.or.jp/construction/upload/20241027_co_second_a01.pdf" } ] },
+        { "grupo": "学科 2024 上期 (26 may 2024)", "items": [
+          { "texto": "Preguntas (PDF)", "url": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf" },
+          { "texto": "Respuestas (PDF)", "url": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf" } ] },
+        { "grupo": "技能 · respuestas por sesión", "items": [
+          { "texto": "2026 上期 · 19 jul", "url": "https://www.shiken.or.jp/construction/second/qa/detail/000677.html" },
+          { "texto": "2026 上期 · 18 jul", "url": "https://www.shiken.or.jp/construction/second/qa/detail/000676.html" },
+          { "texto": "2025 下期 · 14 dic", "url": "https://www.shiken.or.jp/construction/second/qa/detail/000598.html" },
+          { "texto": "2025 下期 · 13 dic", "url": "https://www.shiken.or.jp/construction/second/qa/detail/000596.html" },
+          { "texto": "2025 上期 · 20 jul", "url": "https://www.shiken.or.jp/construction/second/qa/detail/000546.html" },
+          { "texto": "2025 上期 · 19 jul", "url": "https://www.shiken.or.jp/construction/second/qa/detail/000545.html" },
+          { "texto": "2024 下期 · 15 dic", "url": "https://www.shiken.or.jp/construction/second/qa/detail/000481.html" },
+          { "texto": "2024 下期 · 14 dic", "url": "https://www.shiken.or.jp/construction/second/qa/detail/000482.html" },
+          { "texto": "2024 上期 · 21 jul", "url": "https://www.shiken.or.jp/construction/second/qa/detail/000195.html" },
+          { "texto": "2024 上期 · 20 jul", "url": "https://www.shiken.or.jp/construction/second/qa/detail/000197.html" } ] },
+        { "grupo": "技能 · 候補問題", "items": [
+          { "texto": "候補問題 (lista oficial)", "url": "https://www.shiken.or.jp/construction/second/skill/" } ] }
+      ]
+    },
+    {
+      "id": "denko1",
+      "nombre": "第一種電気工事士",
+      "corto": "電工一種",
+      "lectura": "だいいっしゅでんきこうじし",
+      "objetivo": "2028 (estimado)",
+      "resumen": "Sin requisito para rendir el examen. El 免状 exige experiencia práctica. Cálculos de 力率, %Z, transformadores y caída de tensión; vocabulario de alta tensión (キュービクル, PAS, VCB, OCR/GR/DGR).",
+      "temas": [],
+      "enlaces": []
+    },
+    {
+      "id": "denken3",
+      "nombre": "第三種電気主任技術者",
+      "corto": "電験三種",
+      "lectura": "だいさんしゅでんきしゅにんぎじゅつしゃ",
+      "objetivo": "2028–2029 (estimado)",
+      "resumen": "CBT, 五肢択一 en 理論, 電力, 機械 y 法規. 科目合格 con validez limitada (confirmar en shiken.or.jp).",
+      "temas": [],
+      "enlaces": []
+    }
+  ]
+}

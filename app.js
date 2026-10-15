@@ -1,0 +1,400 @@
+/* Estudio Eléctrico — lógica de la app (JS puro, sin dependencias) */
+'use strict';
+
+const APP_VERSION = '0.1.0';
+const KEY_PROGRESS = 'aee.progress.v1';
+const KEY_SETTINGS = 'aee.settings.v1';
+
+/* ---------- Almacenamiento seguro ---------- */
+const store = {
+  get(key, fallback) {
+    try {
+      const raw = localStorage.getItem(key);
+      return raw ? JSON.parse(raw) : fallback;
+    } catch (e) {
+      return fallback;
+    }
+  },
+  set(key, value) {
+    try {
+      localStorage.setItem(key, JSON.stringify(value));
+    } catch (e) {
+      console.warn('No se pudo guardar en localStorage', e);
+    }
+  }
+};
+
+/* ---------- Estado ---------- */
+const state = {
+  exams: [],
+  examId: null,
+  temaId: null,
+  cards: [],          // tarjetas del tema actual
+  deck: [],           // tarjetas filtradas y barajadas
+  pos: 0,
+  flipped: false,
+  view: 'tarjetas',
+  settings: store.get(KEY_SETTINGS, { examId: 'denko2', lectura: false, categoria: '', modo: 'todas' }),
+  progress: store.get(KEY_PROGRESS, {})
+};
+
+const $ = (sel) => document.querySelector(sel);
+const el = (tag, attrs = {}, text) => {
+  const node = document.createElement(tag);
+  Object.entries(attrs).forEach(([k, v]) => node.setAttribute(k, v));
+  if (text !== undefined) node.textContent = text;
+  return node;
+};
+
+/* ---------- Progreso ---------- */
+function temaProgress(examId, temaId) {
+  state.progress[examId] ??= {};
+  state.progress[examId][temaId] ??= {};
+  return state.progress[examId][temaId];
+}
+
+function marcar(card, estado) {
+  const p = temaProgress(state.examId, state.temaId);
+  const prev = p[card.id] || { veces: 0 };
+  p[card.id] = {
+    estado,
+    veces: prev.veces + 1,
+    ultima: new Date().toISOString().slice(0, 10)
+  };
+  store.set(KEY_PROGRESS, state.progress);
+}
+
+/* ---------- Carga de datos ---------- */
+async function loadJSON(path) {
+  const res = await fetch(path);
+  if (!res.ok) throw new Error(`No se pudo cargar ${path} (${res.status})`);
+  return res.json();
+}
+
+async function init() {
+  $('#app-version').textContent = 'v' + APP_VERSION;
+  updateNetStatus();
+  window.addEventListener('online', updateNetStatus);
+  window.addEventListener('offline', updateNetStatus);
+
+  try {
+    const data = await loadJSON('data/exams.json');
+    state.exams = data.examenes;
+  } catch (e) {
+    $('#exam-info').textContent = 'Error al cargar los datos. Revisa la conexión y recarga.';
+    console.error(e);
+    return;
+  }
+
+  renderExamSelector();
+  bindUI();
+  const saved = state.exams.find((x) => x.id === state.settings.examId);
+  await selectExam(saved ? saved.id : state.exams[0].id);
+
+  registerSW();
+}
+
+function updateNetStatus() {
+  $('#net-status').textContent = navigator.onLine ? '' : 'Sin conexión · modo offline';
+}
+
+/* ---------- Selector de examen ---------- */
+function renderExamSelector() {
+  const nav = $('#exam-selector');
+  nav.innerHTML = '';
+  state.exams.forEach((ex) => {
+    const b = el('button', { type: 'button', class: 'exam-btn', 'data-exam': ex.id, 'aria-pressed': 'false' }, ex.corto);
+    b.addEventListener('click', () => selectExam(ex.id));
+    nav.appendChild(b);
+  });
+}
+
+async function selectExam(examId) {
+  state.examId = examId;
+  state.settings.examId = examId;
+  store.set(KEY_SETTINGS, state.settings);
+
+  document.querySelectorAll('.exam-btn').forEach((b) => {
+    b.setAttribute('aria-pressed', String(b.dataset.exam === examId));
+  });
+
+  const ex = currentExam();
+  const info = $('#exam-info');
+  info.innerHTML = '';
+  info.appendChild(el('h2', {}, ex.nombre));
+  info.appendChild(el('p', { class: 'reading' }, ex.lectura + ' · objetivo ' + ex.objetivo));
+  info.appendChild(el('p', { class: 'summary' }, ex.resumen));
+
+  const tema = ex.temas[0];
+  if (tema) {
+    state.temaId = tema.id;
+    try {
+      const data = await loadJSON(tema.archivo);
+      state.cards = data.tarjetas;
+      fillCategoryFilter(data.categorias);
+    } catch (e) {
+      console.error(e);
+      state.cards = [];
+    }
+  } else {
+    state.temaId = null;
+    state.cards = [];
+  }
+
+  $('#tarjetas-empty').hidden = state.cards.length > 0;
+  $('#tarjetas-body').hidden = state.cards.length === 0;
+
+  buildDeck();
+  renderView();
+}
+
+function currentExam() {
+  return state.exams.find((x) => x.id === state.examId);
+}
+
+/* ---------- Filtros y mazo ---------- */
+function fillCategoryFilter(categorias = []) {
+  const sel = $('#f-categoria');
+  sel.innerHTML = '';
+  sel.appendChild(el('option', { value: '' }, 'Todas'));
+  categorias.forEach((c) => sel.appendChild(el('option', { value: c }, c)));
+  if (!categorias.includes(state.settings.categoria)) state.settings.categoria = '';
+  sel.value = state.settings.categoria;
+}
+
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function buildDeck() {
+  const { categoria, modo } = state.settings;
+  const p = state.temaId ? temaProgress(state.examId, state.temaId) : {};
+  const filtered = state.cards.filter((c) => {
+    if (categoria && c.categoria !== categoria) return false;
+    if (modo === 'sinver') return !p[c.id];
+    if (modo === 'nose') return p[c.id] && p[c.id].estado === 'nose';
+    return true;
+  });
+  state.deck = shuffle(filtered);
+  state.pos = 0;
+  state.flipped = false;
+  renderCard();
+}
+
+/* ---------- Tarjeta ---------- */
+function renderCard() {
+  const done = state.pos >= state.deck.length;
+  $('#card').hidden = done;
+  document.querySelector('.answer-bar').hidden = done;
+  $('#deck-done').hidden = !done || state.cards.length === 0;
+  $('#deck-pos').textContent = `${Math.min(state.pos + 1, state.deck.length)} / ${state.deck.length}`;
+  if (done) return;
+
+  const c = state.deck[state.pos];
+  const card = $('#card');
+  card.classList.toggle('is-flipped', state.flipped);
+  card.querySelector('.card-back').hidden = !state.flipped;
+
+  $('#c-cat').textContent = c.categoria;
+  $('#c-flag').hidden = !c.verificar;
+  // Tarjeta con símbolo: el frente muestra solo el dibujo (práctica de reconocimiento);
+  // el nombre aparece al girarla.
+  const soloSimbolo = Boolean(c.imagen);
+  $('#c-term').textContent = c.termino;
+  $('#c-term').hidden = soloSimbolo;
+  $('#c-term-back').textContent = c.termino;
+  $('#c-term-back').hidden = !soloSimbolo;
+  $('#c-hint').textContent = soloSimbolo ? '¿Qué símbolo es? Toca para ver la respuesta' : 'Toca para ver la respuesta';
+  $('#c-reading-front').textContent = c.lectura;
+  $('#c-reading-front').hidden = soloSimbolo || !state.settings.lectura || state.flipped;
+
+  const img = $('#c-img');
+  if (c.imagen) {
+    img.src = c.imagen;
+    img.alt = 'Símbolo de ' + c.termino;
+    img.hidden = false;
+  } else {
+    img.removeAttribute('src');
+    img.hidden = true;
+  }
+
+  $('#c-reading').textContent = c.lectura;
+  $('#c-meaning').textContent = c.significado;
+  $('#c-use').textContent = c.uso;
+  const note = $('#c-note');
+  note.textContent = c.nota ? '⚠ ' + c.nota : '';
+  note.hidden = !c.nota;
+}
+
+function flip() {
+  state.flipped = !state.flipped;
+  renderCard();
+}
+
+function answer(estado) {
+  const c = state.deck[state.pos];
+  if (!c) return;
+  marcar(c, estado);
+  state.pos += 1;
+  state.flipped = false;
+  renderCard();
+}
+
+/* ---------- Vistas ---------- */
+function setView(view) {
+  state.view = view;
+  document.querySelectorAll('.tab').forEach((t) => {
+    t.setAttribute('aria-selected', String(t.dataset.view === view));
+  });
+  renderView();
+}
+
+function renderView() {
+  ['tarjetas', 'progreso', 'enlaces', 'pronto'].forEach((v) => {
+    $('#view-' + v).hidden = v !== state.view;
+  });
+  if (state.view === 'progreso') renderProgress();
+  if (state.view === 'enlaces') renderLinks();
+}
+
+function renderProgress() {
+  const body = $('#progreso-body');
+  body.innerHTML = '';
+  if (!state.cards.length) {
+    body.appendChild(el('p', { class: 'empty' }, 'Todavía no hay contenido para este examen.'));
+    $('#btn-reset').hidden = true;
+    return;
+  }
+  $('#btn-reset').hidden = false;
+
+  const p = temaProgress(state.examId, state.temaId);
+  const count = (list) => {
+    let se = 0, nose = 0;
+    list.forEach((c) => {
+      const r = p[c.id];
+      if (r && r.estado === 'se') se++;
+      else if (r && r.estado === 'nose') nose++;
+    });
+    return { se, nose, sin: list.length - se - nose, total: list.length };
+  };
+
+  const t = count(state.cards);
+  const grid = el('div', { class: 'stat-grid' });
+  [['se', t.se, 'Sé'], ['nose', t.nose, 'No sé'], ['', t.sin, 'Sin ver']].forEach(([cls, n, label]) => {
+    const s = el('div', { class: 'stat ' + cls });
+    s.appendChild(el('b', {}, String(n)));
+    s.appendChild(el('span', {}, label));
+    grid.appendChild(s);
+  });
+  body.appendChild(grid);
+  body.appendChild(makeBar(t));
+
+  const cats = [...new Set(state.cards.map((c) => c.categoria))];
+  cats.forEach((cat) => {
+    const r = count(state.cards.filter((c) => c.categoria === cat));
+    const row = el('div', { class: 'cat-row' });
+    row.appendChild(el('span', {}, cat));
+    row.appendChild(el('span', {}, `${r.se}/${r.total}`));
+    body.appendChild(row);
+    body.appendChild(makeBar(r));
+  });
+}
+
+function makeBar({ se, nose, total }) {
+  const bar = el('div', { class: 'bar', role: 'img', 'aria-label': `${se} sé, ${nose} no sé de ${total}` });
+  const a = el('i', { class: 'b-se' });
+  a.style.width = (total ? (se / total) * 100 : 0) + '%';
+  const b = el('i', { class: 'b-nose' });
+  b.style.width = (total ? (nose / total) * 100 : 0) + '%';
+  bar.append(a, b);
+  return bar;
+}
+
+function renderLinks() {
+  const body = $('#enlaces-body');
+  body.innerHTML = '';
+  const ex = currentExam();
+  if (!ex.enlaces.length) {
+    body.appendChild(el('p', { class: 'empty' }, 'Enlaces oficiales pendientes para este examen.'));
+    return;
+  }
+  ex.enlaces.forEach((g) => {
+    const box = el('div', { class: 'link-group' });
+    box.appendChild(el('h3', {}, g.grupo));
+    const ul = el('ul');
+    g.items.forEach((it) => {
+      const li = el('li');
+      li.appendChild(el('a', { href: it.url, target: '_blank', rel: 'noopener' }, it.texto));
+      ul.appendChild(li);
+    });
+    box.appendChild(ul);
+    body.appendChild(box);
+  });
+}
+
+/* ---------- Eventos ---------- */
+function bindUI() {
+  document.querySelectorAll('.tab').forEach((t) => t.addEventListener('click', () => setView(t.dataset.view)));
+
+  $('#card').addEventListener('click', flip);
+  $('#card').addEventListener('keydown', (e) => {
+    if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flip(); }
+  });
+  $('#btn-se').addEventListener('click', () => answer('se'));
+  $('#btn-nose').addEventListener('click', () => answer('nose'));
+  $('#btn-barajar').addEventListener('click', buildDeck);
+  $('#btn-reiniciar').addEventListener('click', () => {
+    state.settings.modo = 'todas';
+    $('#f-modo').value = 'todas';
+    store.set(KEY_SETTINGS, state.settings);
+    buildDeck();
+  });
+
+  $('#f-categoria').addEventListener('change', (e) => {
+    state.settings.categoria = e.target.value;
+    store.set(KEY_SETTINGS, state.settings);
+    buildDeck();
+  });
+  const modo = $('#f-modo');
+  modo.value = state.settings.modo;
+  modo.addEventListener('change', (e) => {
+    state.settings.modo = e.target.value;
+    store.set(KEY_SETTINGS, state.settings);
+    buildDeck();
+  });
+  const lectura = $('#f-lectura');
+  lectura.checked = state.settings.lectura;
+  lectura.addEventListener('change', (e) => {
+    state.settings.lectura = e.target.checked;
+    store.set(KEY_SETTINGS, state.settings);
+    renderCard();
+  });
+
+  $('#btn-reset').addEventListener('click', () => {
+    if (!confirm('¿Borrar el progreso de este examen?')) return;
+    delete state.progress[state.examId];
+    store.set(KEY_PROGRESS, state.progress);
+    buildDeck();
+    renderProgress();
+  });
+
+  // Teclado en escritorio: ← no sé, → sé, espacio gira
+  document.addEventListener('keydown', (e) => {
+    if (state.view !== 'tarjetas' || e.target.tagName === 'SELECT') return;
+    if (e.key === 'ArrowLeft') answer('nose');
+    if (e.key === 'ArrowRight') answer('se');
+  });
+}
+
+/* ---------- Service worker ---------- */
+function registerSW() {
+  if (!('serviceWorker' in navigator)) return;
+  navigator.serviceWorker.register('sw.js').catch((e) => console.warn('SW no registrado', e));
+}
+
+init();

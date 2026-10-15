@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Estudio Eléctrico</title>
+  <meta name="description" content="Tarjetas y repaso para 電工二種, 電工一種 y 電験三種.">
+  <meta name="theme-color" content="#14213d">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Estudio Eléctrico">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1 class="app-title">Estudio Eléctrico</h1>
+    <nav class="exam-selector" aria-label="Examen" id="exam-selector">
+      <!-- Botones generados desde data/exams.json -->
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="exam-info" id="exam-info" aria-live="polite"></section>
+
+    <nav class="tabs" role="tablist" aria-label="Secciones">
+      <button role="tab" class="tab" data-view="tarjetas" aria-selected="true">Tarjetas</button>
+      <button role="tab" class="tab" data-view="progreso" aria-selected="false">Progreso</button>
+      <button role="tab" class="tab" data-view="enlaces" aria-selected="false">Enlaces</button>
+      <button role="tab" class="tab" data-view="pronto" aria-selected="false">Más</button>
+    </nav>
+
+    <!-- Vista: tarjetas (repaso sé / no sé) -->
+    <section class="view" id="view-tarjetas" role="tabpanel">
+      <div class="empty" id="tarjetas-empty" hidden>
+        Contenido próximamente para este examen.
+      </div>
+
+      <div id="tarjetas-body">
+        <div class="filters">
+          <label class="field">
+            <span>Categoría</span>
+            <select id="f-categoria"><option value="">Todas</option></select>
+          </label>
+          <label class="field">
+            <span>Mostrar</span>
+            <select id="f-modo">
+              <option value="todas">Todas</option>
+              <option value="sinver">Sin ver</option>
+              <option value="nose">No sé</option>
+            </select>
+          </label>
+          <label class="switch">
+            <input type="checkbox" id="f-lectura">
+            <span>Lectura en el frente</span>
+          </label>
+        </div>
+
+        <div class="deck-meta">
+          <span id="deck-pos">0 / 0</span>
+          <button class="link-btn" id="btn-barajar" type="button">Barajar</button>
+        </div>
+
+        <article class="card" id="card" tabindex="0" aria-live="polite">
+          <div class="card-face card-front">
+            <span class="card-cat" id="c-cat"></span>
+            <span class="card-flag" id="c-flag" hidden title="Contenido a verificar">⚠ verificar</span>
+            <img class="card-img" id="c-img" alt="" hidden>
+            <p class="card-term" id="c-term"></p>
+            <p class="card-reading card-reading-front" id="c-reading-front" hidden></p>
+            <p class="card-hint" id="c-hint">Toca para ver la respuesta</p>
+          </div>
+          <div class="card-face card-back" hidden>
+            <p class="card-back-term" id="c-term-back" hidden></p>
+            <p class="card-reading" id="c-reading"></p>
+            <p class="card-meaning" id="c-meaning"></p>
+            <p class="card-use"><strong>En el examen:</strong> <span id="c-use"></span></p>
+            <p class="card-note" id="c-note" hidden></p>
+          </div>
+        </article>
+
+        <div class="answer-bar">
+          <button class="btn btn-nose" id="btn-nose" type="button">No sé</button>
+          <button class="btn btn-se" id="btn-se" type="button">Sé</button>
+        </div>
+
+        <div class="empty" id="deck-done" hidden>
+          <p>No quedan tarjetas con este filtro.</p>
+          <button class="btn" id="btn-reiniciar" type="button">Volver a empezar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vista: progreso -->
+    <section class="view" id="view-progreso" role="tabpanel" hidden>
+      <div id="progreso-body"></div>
+      <button class="link-btn danger" id="btn-reset" type="button">Borrar progreso de este examen</button>
+    </section>
+
+    <!-- Vista: enlaces oficiales -->
+    <section class="view" id="view-enlaces" role="tabpanel" hidden>
+      <div id="enlaces-body"></div>
+    </section>
+
+    <!-- Vista: secciones futuras -->
+    <section class="view" id="view-pronto" role="tabpanel" hidden>
+      <ul class="soon-list">
+        <li>Quiz por tema <span class="badge">próximamente</span></li>
+        <li>Checklist de 欠陥（けっかん）<span class="badge">próximamente</span></li>
+        <li>Temporizador 40 min para 技能 <span class="badge">próximamente</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <span id="net-status"></span>
+    <span id="app-version"></span>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
