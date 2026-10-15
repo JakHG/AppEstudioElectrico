@@ -53,13 +53,21 @@ URL: `https://jakhg.github.io/AppEstudioElectrico/`. Todas las rutas son relativ
   "es": "término corto en español",
   "significado": "significado en español",
   "uso": "cómo aparece en el examen",
+  "verificacion": "fuente | parcial",
+  "fuentes": [{ "texto": "電技解釈 第17条", "url": "https://..." }],
   "verificar": false,
-  "nota": "qué hay que verificar (si verificar = true)",
+  "nota": "qué falta confirmar (si verificar = true)",
   "imagen": "img/... (opcional)"
 }
 ```
 
-`verificar: true` muestra un distintivo ⚠ en la tarjeta. JSON no admite comentarios, por eso es un campo.
+- `verificacion: "fuente"` → el reverso muestra «✓ Verificado con fuente» y la lista de fuentes.
+- `verificacion: "parcial"` + `verificar: true` → distintivo ⚠ y la nota de qué falta confirmar.
+- Fuentes preferidas: respuestas oficiales de los 学科 (shiken.or.jp), 電技省令 / 電技解釈, JIS C 0303, fabricantes. Las webs de estudio solo como apoyo.
+
+## Reportar errores
+
+En el reverso de cada tarjeta: «Reportar error». Los reportes quedan en `aee.reports.v1` y se ven en la pestaña Progreso, con un botón para copiarlos y pasárselos a Claude.
 
 ## Progreso (localStorage)
 

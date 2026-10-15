@@ -19,10 +19,33 @@
       "lectura": "リングスリーブようあっちゃくこうぐ",
       "es": "Pinza para ring sleeve",
       "significado": "Pinza de compresión para manguitos de unión (ring sleeve).",
-      "uso": "Mango amarillo. Tiene matrices ○ / 小 / 中 / 大. En 技能, usar la matriz equivocada es 欠陥. El de mango rojo es para terminales desnudos, no para ring sleeves.",
+      "uso": "Mango amarillo (JIS C 9711). Matrices 特小 (1,6×2, deja la marca ○) / 小 / 中 (algunos modelos también 大). En 技能, dejar la marca de compresión equivocada es 欠陥. El de mango rojo es para terminales y manguitos desnudos (裸圧着端子・スリーブ), no para ring sleeves.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "HOZAN 第二種電工試験の虎 材料及び工具3 (mango amarillo = ring sleeve; no amarillo = terminales)",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1material3"
+        },
+        {
+          "texto": "HOZAN P-737 (dados 小(1.6×2)/小/中)",
+          "url": "https://www.hozan.co.jp/E/catalog/Crimpers/P-737.html"
+        },
+        {
+          "texto": "TERASU辞書 Panasonic: リングスリーブ (mango amarillo)",
+          "url": "https://www2.panasonic.biz/jp/terasu/skill/dictionary/ringsleeve.html"
+        },
+        {
+          "texto": "Tenisyoku: mango rojo = 裸圧着端子・裸圧着スリーブ用",
+          "url": "https://www.tenisyoku.com/media/electrician/dainishu-denki-kojishi/2703"
+        },
+        {
+          "texto": "欠陥の判断基準 6-1 (圧着マーク不適正 = 欠陥)",
+          "url": "https://www.shiken.or.jp/construction/upload/handankizyun2017.pdf"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-002",
@@ -31,10 +54,25 @@
       "lectura": "ワイヤストリッパ",
       "es": "Pelacables",
       "significado": "Pelacables.",
-      "uso": "Se usa para quitar la vaina de la VVF y el aislante del conductor. Es la herramienta principal del 技能.",
+      "uso": "Quita la vaina de la VVF y el aislante del conductor. No es 指定工具 del 技能 (para pelar, la herramienta obligatoria es el 電工ナイフ), pero casi todos la usan porque ahorra tiempo.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "HOZAN 材料及び工具3 問9 (ワイヤーストリッパー: quita vaina y aislante de VVF)",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1material3"
+        },
+        {
+          "texto": "FAQ 電気技術者試験センター Q58 / guía de herramientas (指定工具)",
+          "url": "https://www.shiken.or.jp/shiken/faq/faq01/000193.html"
+        },
+        {
+          "texto": "koujishi.com: lista de 指定工具 (受験案内 p.37); VVFストリッパー no es 指定工具",
+          "url": "https://koujishi.com/denkikouji/126"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-003",
@@ -46,7 +84,18 @@
       "uso": "Hace agujeros para tubos en cajas y gabinetes metálicos (金属製キャビネット). Existe en versión manual y en versión 油圧式.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "学科 2024下期 問13 イ 金属製キャビネットに穴を開ける (respuesta oficial イ)",
+          "url": "https://www.shiken.or.jp/construction/upload/20241027_co_second_q01.pdf"
+        },
+        {
+          "texto": "Respuesta oficial 2024下期",
+          "url": "https://www.shiken.or.jp/construction/upload/20241027_co_second_a01.pdf"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-004",
@@ -58,7 +107,22 @@
       "uso": "Hace agujeros grandes en vigas y pilares de madera (木造造営材) para pasar cables o tubos. No sirve para metal.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "学科 2026上期 問13 ロ 木造天井板に穴をあける作業と羽根ぎり (correcta; respuesta oficial ニ)",
+          "url": "https://www.shiken.or.jp/construction/upload/20260524_co_second_q01.pdf"
+        },
+        {
+          "texto": "Respuesta oficial 2026上期",
+          "url": "https://www.shiken.or.jp/construction/upload/20260524_co_second_a01.pdf"
+        },
+        {
+          "texto": "HOZAN 材料及び工具4 (羽根切り: madera, se monta en クリックボール)",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1material4"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-005",
@@ -70,7 +134,30 @@
       "uso": "Tensa la メッセンジャワイヤ o los conductores de líneas aéreas (架空配線).",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "学科 2025下期 問18 ニ 架空線のたるみを調整 (respuesta oficial ニ)",
+          "url": "https://www.shiken.or.jp/construction/upload/20251026_co_second_q01.pdf"
+        },
+        {
+          "texto": "Respuesta oficial 2025下期",
+          "url": "https://www.shiken.or.jp/construction/upload/20251026_co_second_a01.pdf"
+        },
+        {
+          "texto": "学科 2026上期 問13 ハ 電線、メッセンジャワイヤ等のたるみを取る作業と張線器",
+          "url": "https://www.shiken.or.jp/construction/upload/20260524_co_second_q01.pdf"
+        },
+        {
+          "texto": "HOZAN 材料及び工具3 問11 (張線器（シメラー）)",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1material3"
+        },
+        {
+          "texto": "Diccionario: 張線器 ちょうせんき",
+          "url": "http://etg1.com/61579.html"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-006",
@@ -82,7 +169,26 @@
       "uso": "Corta el 2種金属製可とう電線管 (プリカチューブ). Cuando preguntan por \"qué herramienta corta el tubo flexible\", es esta.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "学科 2026上期 問13 ニ 薄鋼電線管を切断する作業とプリカナイフ = incorrecta (respuesta oficial ニ)",
+          "url": "https://www.shiken.or.jp/construction/upload/20260524_co_second_q01.pdf"
+        },
+        {
+          "texto": "Respuesta oficial 2026上期",
+          "url": "https://www.shiken.or.jp/construction/upload/20260524_co_second_a01.pdf"
+        },
+        {
+          "texto": "HOZAN 材料及び工具4 (プリカナイフ: corta 二種金属製可とう電線管)",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1material4"
+        },
+        {
+          "texto": "SANKEI catálogo プリカチューブ: cortar con プリカナイフ",
+          "url": "https://www.sankei-ss.co.jp/pdf/PLICATUBE/33.P255-256.pdf"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-007",
@@ -94,7 +200,26 @@
       "uso": "Hace la rosca en tubos metálicos con rosca (厚鋼・薄鋼電線管). En las preguntas de 金属管工事 suele aparecer como opción.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "学科 2025上期 問13 イ 合成樹脂管工事とリード型ねじ切り器 = combinación errónea (respuesta oficial ハ)",
+          "url": "https://www.shiken.or.jp/construction/upload/20250525_co_second_q01.pdf"
+        },
+        {
+          "texto": "Respuesta oficial 2025上期",
+          "url": "https://www.shiken.or.jp/construction/upload/20250525_co_second_a01.pdf"
+        },
+        {
+          "texto": "masassiah 工具一覧: リード型ねじ切り器 = 金属管のねじを切る",
+          "url": "https://masassiah.web.fc2.com/contents/01kouji2/f13.html"
+        },
+        {
+          "texto": "eleking: 金属管工事の工具",
+          "url": "https://eleking.net/k21/k21c/k21c-tool.html"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-008",
@@ -106,7 +231,26 @@
       "uso": "Corta el 硬質ポリ塩化ビニル電線管 (VE). Combinación típica de 合成樹脂管工事: esta herramienta, トーチランプ y TSカップリング.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "学科 2024上期 問13 ニ 合成樹脂管用カッタ・面取器・トーチランプ (respuesta oficial ニ)",
+          "url": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf"
+        },
+        {
+          "texto": "Respuesta oficial 2024上期",
+          "url": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
+        },
+        {
+          "texto": "学科 2026上期 問11 TSカップリング = 硬質ポリ塩化ビニル電線管相互の接続 (respuesta イ)",
+          "url": "https://www.shiken.or.jp/construction/upload/20260524_co_second_q01.pdf"
+        },
+        {
+          "texto": "HOZAN 材料及び工具4 問1",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1material4"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-009",
@@ -118,7 +262,26 @@
       "uso": "Dobla en obra el tubo metálico (金属管). El VE no se dobla con esta herramienta, sino calentándolo.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "学科 2025下期 問13 ねじなし電線管の曲げ加工 → パイプベンダ (respuesta oficial ニ)",
+          "url": "https://www.shiken.or.jp/construction/upload/20251026_co_second_q01.pdf"
+        },
+        {
+          "texto": "Respuesta oficial 2025下期",
+          "url": "https://www.shiken.or.jp/construction/upload/20251026_co_second_a01.pdf"
+        },
+        {
+          "texto": "学科 2025上期 問13 ハ 金属管工事とパイプベンダ (respuesta oficial ハ)",
+          "url": "https://www.shiken.or.jp/construction/upload/20250525_co_second_q01.pdf"
+        },
+        {
+          "texto": "HOZAN 材料及び工具4 問5 (VE se dobla con トーチランプ)",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1material4"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-010",
@@ -130,7 +293,26 @@
       "uso": "Calienta el tubo VE para doblarlo. Asociarlo a 合成樹脂管工事, no a 金属管工事.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "学科 2024上期 問13 ニ (トーチランプ en el juego para VE; respuesta oficial ニ)",
+          "url": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf"
+        },
+        {
+          "texto": "Respuesta oficial 2024上期",
+          "url": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
+        },
+        {
+          "texto": "学科 2025下期 問13 イ トーチランプ = distractor para ねじなし電線管 (respuesta ニ)",
+          "url": "https://www.shiken.or.jp/construction/upload/20251026_co_second_q01.pdf"
+        },
+        {
+          "texto": "HOZAN 材料及び工具4 問5",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1material4"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-011",
@@ -142,7 +324,18 @@
       "uso": "Sujeta y gira el tubo metálico al apretar カップリング roscadas.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "masassiah 工具一覧: パイプレンチ = カップリングを締め付ける",
+          "url": "https://masassiah.web.fc2.com/contents/01kouji2/f13.html"
+        },
+        {
+          "texto": "HOZAN 材料及び工具4 問6/問9 (金属管にカップリングを取り付ける／金属管の保持)",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1material4"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-012",
@@ -151,10 +344,29 @@
       "lectura": "ボルトクリッパ",
       "es": "Cortapernos",
       "significado": "Cizalla de palanca (cortapernos).",
-      "uso": "Corta alambres y barras de acero gruesos. Suele aparecer como distractor en preguntas de 金属管工事.",
+      "uso": "Corta conductores gruesos, メッセンジャワイヤ, alambre y barras de acero. En las preguntas de combinación obra-herramienta aparece como distractor (por ejemplo, 金属線ぴ工事 con ボルトクリッパ, que es incorrecta).",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "学科 2025上期 問13 ニ 金属線ぴ工事とボルトクリッパ = incorrecta (respuesta oficial ハ)",
+          "url": "https://www.shiken.or.jp/construction/upload/20250525_co_second_q01.pdf"
+        },
+        {
+          "texto": "Respuesta oficial 2025上期",
+          "url": "https://www.shiken.or.jp/construction/upload/20250525_co_second_a01.pdf"
+        },
+        {
+          "texto": "HOZAN 材料及び工具3 問13 (ボルトクリッパ: corta conductores gruesos; distractor 金属線ぴ工事)",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1material3"
+        },
+        {
+          "texto": "eleking: ボルトクリッパ = 太い電線、メッセンジャワイヤ、鉄線を切断",
+          "url": "https://eleking.net/k21/k21k/k21k-tool.html"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-013",
@@ -166,7 +378,22 @@
       "uso": "Se monta en la クリックボール y quita la rebaba del interior del tubo metálico después de cortarlo, para no dañar el aislante del cable.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "masassiah 工具一覧: リーマ = クリックボールに取り付け金属管内側のバリ取り",
+          "url": "https://masassiah.web.fc2.com/contents/01kouji2/f13.html"
+        },
+        {
+          "texto": "HOZAN 材料及び工具3 問13 金属管工事とリーマ (correcta)",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1material3"
+        },
+        {
+          "texto": "eleking: リーマとクリックボール",
+          "url": "https://eleking.net/k21/k21c/k21c-tool.html"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-014",
@@ -178,7 +405,18 @@
       "uso": "Se introduce primero en el tubo y luego tira de los conductores (通線).",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "HOZAN 材料及び工具3 問11 (呼び線挿入器（通線器）: 電線管に電線を通線)",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1material3"
+        },
+        {
+          "texto": "TERASU辞書 Panasonic: 呼び線挿入器",
+          "url": "https://www2.panasonic.biz/jp/terasu/skill/dictionary/calllineinserter.html"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-015",
@@ -190,7 +428,26 @@
       "uso": "Comprime terminales y manguitos de conductores gruesos, que no se pueden hacer con la pinza manual.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "学科 2024下期 問18 写真の工具 = 手動油圧式圧着器 (respuesta oficial イ)",
+          "url": "https://www.shiken.or.jp/construction/upload/20241027_co_second_q01.pdf"
+        },
+        {
+          "texto": "Respuesta oficial 2024下期",
+          "url": "https://www.shiken.or.jp/construction/upload/20241027_co_second_a01.pdf"
+        },
+        {
+          "texto": "HOZAN 材料及び工具3 (手動油圧式: 太い電線を圧着端子に圧着接続)",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1material3"
+        },
+        {
+          "texto": "denkipro: 手動油圧圧着工具 con terminales y manguitos B/P",
+          "url": "https://denkipro.com/denki-kouji/Joint1/Joint8.html"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-016",
@@ -202,7 +459,30 @@
       "uso": "Tamaños: 小・中・大. Elección típica (cables 1,6 mm / 2,0 mm): 1,6×2 → 小 con marca ○. 1,6×3–4 o 2,0×2 → 小 con marca 小. 1,6×5–6 o 2,0×3–4 → 中 con marca 中. Se pregunta en 学科 (配線図) y se evalúa en 技能.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "Catálogo ニチフ リングスリーブ E形 (JIS C 2806), tabla de combinaciones",
+          "url": "https://adwecs.jp/w/item/itemPdf_11712_1.pdf"
+        },
+        {
+          "texto": "Ficha ニチフ E-小 (tabla 電線組み合わせ / 適用歯口)",
+          "url": "https://shop.oyaide.com/products/p-2154.html"
+        },
+        {
+          "texto": "学科 2025下期 問19 (respuesta oficial ハ: 2.0×2 con 中 es inadecuado)",
+          "url": "https://www.shiken.or.jp/construction/upload/20251026_co_second_q01.pdf"
+        },
+        {
+          "texto": "Respuestas oficiales 2025下期",
+          "url": "https://www.shiken.or.jp/construction/upload/20251026_co_second_a01.pdf"
+        },
+        {
+          "texto": "欠陥の判断基準 6-1 イ/ロ (selección y marca según JIS C 2806)",
+          "url": "https://www.shiken.or.jp/construction/upload/handankizyun2017.pdf"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-017",
@@ -211,10 +491,25 @@
       "lectura": "さしこみがたコネクタ",
       "es": "Conector de inserción",
       "significado": "Conector de empalme por inserción (tipo WAGO).",
-      "uso": "No necesita herramienta. Se pela el conductor a la longitud de la guía del conector. Si el cobre queda visible fuera del conector, es 欠陥 en 技能. En 配線図 se pregunta cuántos y de qué número de polos.",
+      "uso": "No necesita herramienta. Se pela el conductor a la longitud de la ストリップゲージ del conector. En 技能 es 欠陥 si se ve el cobre por la parte inferior del conector, o si, mirando de lado, no se ve la punta del conductor en el extremo (inserción insuficiente). En 配線図 se pregunta cuántos conectores hacen falta y de qué tipo según el número de conductores (2本用, 3本用, 4本用).",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "欠陥の判断基準 7-1 y 7-2 (差込形コネクタ)",
+          "url": "https://www.shiken.or.jp/construction/upload/handankizyun2017.pdf"
+        },
+        {
+          "texto": "Catálogo WAGO: pelar según la ストリップゲージ (12–14 mm en WGZ)",
+          "url": "https://www.wago.co.jp/download/catalog/data/ctlg_denzai.pdf"
+        },
+        {
+          "texto": "学科 2025上期 問48 (tipo y número mínimo de 差込形コネクタ)",
+          "url": "https://www.shiken.or.jp/construction/upload/20250525_co_second_q01.pdf"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-018",
@@ -226,7 +521,22 @@
       "uso": "Es el cable estándar de vivienda y del 技能. \"VVF1.6-2C\" significa conductores de 1,6 mm y 2 hilos. VVR es la versión redonda (丸形).",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "SWCC/SFCC especificación VVF (600V ビニル絶縁ビニルシースケーブル平形, 1.6 mm 2心)",
+          "url": "https://www.swcc.co.jp/sfcc/products/pdf/SF-0039_VVF.pdf"
+        },
+        {
+          "texto": "学科 2025下期 問題2 注意1 (VVF en 屋内配線) y 問31 ハ (…ケーブル丸形)",
+          "url": "https://www.shiken.or.jp/construction/upload/20251026_co_second_q01.pdf"
+        },
+        {
+          "texto": "Panasonic 配線図記号: VVF = 600Vビニル絶縁ビニルシースケーブル平形",
+          "url": "https://www2.panasonic.biz/jp/basics/electric/electricity/symbols/conduits-cables"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-019",
@@ -238,7 +548,14 @@
       "uso": "Va dentro de tubos (金属管 / 合成樹脂管). Como no tiene vaina, no puede ir directamente en ケーブル工事.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "電技解釈 第164条 第1項第一号 y tabla 164-1 (en ケーブル工事 solo se admiten ケーブル y キャブタイヤケーブル)",
+          "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-020",
@@ -250,7 +567,26 @@
       "uso": "Se usa en 幹線 y en motores. En 配線図 aparece como \"CV 5.5-3C\" (5,5 mm², 3 hilos).",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "学科 2024下期 問12 600V 架橋ポリエチレン絶縁ビニルシースケーブル(CV)",
+          "url": "https://www.shiken.or.jp/construction/upload/20241027_co_second_q01.pdf"
+        },
+        {
+          "texto": "HOZAN 材料及び工具5 問15 (CV14mm2-3C = 断面積14mm2・3心)",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1material5"
+        },
+        {
+          "texto": "SWCC: CV es el cable de potencia representativo",
+          "url": "https://www.swcc.co.jp/jpn/products/tec_information/industrial_cable.html"
+        },
+        {
+          "texto": "Glosario Watanabe: 架橋 = かきょう",
+          "url": "https://kabu-watanabe.com/glossary/denki/06ka/index.html"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-021",
@@ -262,7 +598,26 @@
       "uso": "\"EM\" significa エコマテリアル. En 配線図 se pregunta cuál es el nombre completo de EM-EEF, EM-CE o EM-IE.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "Panasonic 配線図記号: EM-EEF = 600Vポリエチレン絶縁耐燃性ポリエチレンシースケーブル平形",
+          "url": "https://www2.panasonic.biz/jp/basics/electric/electricity/symbols/conduits-cables"
+        },
+        {
+          "texto": "学科 2025下期 問35 (nombre de EM-CE) y 問12",
+          "url": "https://www.shiken.or.jp/construction/upload/20251026_co_second_q01.pdf"
+        },
+        {
+          "texto": "日本電線工業会 技資142C: EM = エコマテリアル (sin halógenos ni plomo)",
+          "url": "https://www.jcma2.jp/files/gijutsu/Shiryo/142C.pdf"
+        },
+        {
+          "texto": "HOZAN 用語集 EM-EEF (いーえむいーいーえふ)",
+          "url": "https://denko.hozan.co.jp/terms/result?content=EM-EEF"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-022",
@@ -271,10 +626,25 @@
       "lectura": "ごうせいじゅしせいかとうでんせんかん（シーディーかん）",
       "es": "Tubo corrugado CD",
       "significado": "Tubo corrugado plástico, no autoextinguible (normalmente naranja).",
-      "uso": "Va embutido en hormigón. No puede quedar a la vista (露出) ni en el interior de muros ligeros. Diferencia clave con el PF管, que es 耐燃性.",
+      "uso": "En 合成樹脂管工事 solo puede ir empotrado directamente en hormigón, o dentro de un tubo o ducto exclusivo no combustible o autoextinguible (電技解釈 第158条). No puede quedar a la vista ni ir suelto en falsos techos. Diferencia clave con el PF管, que es 耐燃性 (autoextinguible).",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "電技解釈 第158条 第3項第七号 (CD管: イ empotrado directamente en hormigón, o ロ dentro de un tubo o ducto exclusivo no combustible o autoextinguible)",
+          "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf"
+        },
+        {
+          "texto": "未来工業 FAQ: CD管 es combustible; con IV solo se puede embutir en hormigón",
+          "url": "https://faq.mirai.co.jp/s/article/CD%E7%AE%A1-PF%E7%AE%A1%E3%81%AE%E9%81%95%E3%81%84%E3%81%AF"
+        },
+        {
+          "texto": "学科 2025下期 問20 (respuesta oficial ロ: IV dentro de CD管 en el falso techo es inadecuado)",
+          "url": "https://www.shiken.or.jp/construction/upload/20251026_co_second_q01.pdf"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-023",
@@ -286,7 +656,18 @@
       "uso": "Al ser 耐燃性, puede ir a la vista y en más lugares que el CD管. En 配線図 aparece como \"(PF16)\".",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "未来工業 FAQ: PF管 es autoextinguible; con IV puede ir en interior y exterior",
+          "url": "https://faq.mirai.co.jp/s/article/CD%E7%AE%A1-PF%E7%AE%A1%E3%81%AE%E9%81%95%E3%81%84%E3%81%AF"
+        },
+        {
+          "texto": "国交省 公共建築設備工事標準図: notación 1.6(PF16)",
+          "url": "https://www.mlit.go.jp/common/001108579.pdf"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-024",
@@ -298,7 +679,26 @@
       "uso": "En 配線図 aparece como \"(VE22)\". Se corta con 合成樹脂管用カッタ, se dobla con トーチランプ y se une con TSカップリング.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "学科 2024上期 問13 ニ (corte/doblado de VE)",
+          "url": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf"
+        },
+        {
+          "texto": "学科 2025下期 問34 (VE28) = 硬質ポリ塩化ビニル電線管 (respuesta oficial イ)",
+          "url": "https://www.shiken.or.jp/construction/upload/20251026_co_second_q01.pdf"
+        },
+        {
+          "texto": "Respuesta oficial 2025下期",
+          "url": "https://www.shiken.or.jp/construction/upload/20251026_co_second_a01.pdf"
+        },
+        {
+          "texto": "学科 2026上期 問11 TSカップリング",
+          "url": "https://www.shiken.or.jp/construction/upload/20260524_co_second_q01.pdf"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-025",
@@ -310,7 +710,22 @@
       "uso": "Une dos tubos VE con adhesivo. En la pregunta del tipo \"qué material se usa en 合成樹脂管工事\", es la respuesta.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "学科 2026上期 問11 TSカップリング = 硬質ポリ塩化ビニル電線管相互を接続 (respuesta oficial イ)",
+          "url": "https://www.shiken.or.jp/construction/upload/20260524_co_second_q01.pdf"
+        },
+        {
+          "texto": "Respuesta oficial 2026上期",
+          "url": "https://www.shiken.or.jp/construction/upload/20260524_co_second_a01.pdf"
+        },
+        {
+          "texto": "HOZAN 材料及び工具4 (TSカップリング + 接着剤)",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1material4"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-026",
@@ -322,7 +737,22 @@
       "uso": "Se une con piezas de tornillo de fijación y no se rosca. En 配線図 aparece como \"(E19)\".",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "TERASU辞書 Panasonic: ねじなし電線管 (E管, sin rosca, pared más fina que 薄鋼)",
+          "url": "https://www2.panasonic.biz/jp/terasu/skill/dictionary/screwlessconduit.html"
+        },
+        {
+          "texto": "学科 2025上期 配線図 (E19)",
+          "url": "https://www.shiken.or.jp/construction/upload/20250525_co_second_q01.pdf"
+        },
+        {
+          "texto": "shiken.or.jp 技能試験の概要 (ねじなしボックスコネクタ con 止めねじ)",
+          "url": "https://www.shiken.or.jp/construction/upload/point2025_2.pdf"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-027",
@@ -334,7 +764,22 @@
       "uso": "Une el ねじなし電線管 a la caja. El tornillo se aprieta hasta que la cabeza se corta (ねじ切れるまで).",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "学科 2025上期 問11 ハ \"ネジの頭部をねじ切らないように\" = afirmación errónea (respuesta oficial ハ)",
+          "url": "https://www.shiken.or.jp/construction/upload/20250525_co_second_q01.pdf"
+        },
+        {
+          "texto": "Respuesta oficial 2025上期",
+          "url": "https://www.shiken.or.jp/construction/upload/20250525_co_second_a01.pdf"
+        },
+        {
+          "texto": "技能試験の概要と注意すべきポイント 2025: 止めねじは頭部がねじ切れるまで締め付ける",
+          "url": "https://www.shiken.or.jp/construction/upload/point2025_2.pdf"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-028",
@@ -342,11 +787,26 @@
       "termino": "ノーマルベンド",
       "lectura": "ノーマルベンド",
       "es": "Curva normal de tubo",
-      "significado": "Curva prefabricada de tubo metálico (90°).",
-      "uso": "Se usa en las curvas de 金属管工事 embutido o donde no se dobla el tubo en obra.",
+      "significado": "Curva prefabricada de 90° para tubo.",
+      "uso": "Evita tener que doblar el tubo en obra. Hay versiones para tubo metálico y para VE. En esquinas a la vista se usa la ユニバーサル.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "学科 2025下期 問16 写真 = ノーマルベンド (respuesta oficial ロ)",
+          "url": "https://www.shiken.or.jp/construction/upload/20251026_co_second_q01.pdf"
+        },
+        {
+          "texto": "TERASU辞書 Panasonic: ノーマルベンド (90°, existe para 薄鋼/厚鋼/ねじなし/VE)",
+          "url": "https://www2.panasonic.biz/jp/terasu/skill/dictionary/normalbend.html"
+        },
+        {
+          "texto": "八州電工: ユニバーサル se usa donde no se puede usar ノーマルベンド",
+          "url": "https://www.yashimadenko.co.jp/lineup/universalbox"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-029",
@@ -358,7 +818,30 @@
       "uso": "Se usa en las curvas a 90° de 金属管 a la vista (露出配管). Hay que diferenciarla de la ノーマルベンド.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "学科 2025下期 問16 opciones ユニバーサル/ノーマルベンド",
+          "url": "https://www.shiken.or.jp/construction/upload/20251026_co_second_q01.pdf"
+        },
+        {
+          "texto": "HOZAN 材料及び工具1 問15 (ユニバーサル: 金属管工事で直角に曲がる場所)",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1material1"
+        },
+        {
+          "texto": "TERASU辞書 Panasonic: ユニバーサル (90°, permite sacar el cable en la esquina)",
+          "url": "https://www2.panasonic.biz/jp/terasu/skill/dictionary/universal.html"
+        },
+        {
+          "texto": "八州電工 catálogo ユニバーサル LB/LL/LT",
+          "url": "https://www.yashimadenko.co.jp/lineup/universalbox"
+        },
+        {
+          "texto": "e-sysnet: 主に露出配管に使われます",
+          "url": "https://e-sysnet.com/%E9%9B%BB%E7%B7%9A%E7%AE%A1%E5%B7%A5%E4%BA%8B%E3%81%AE%E6%9D%90%E6%96%99"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-030",
@@ -367,10 +850,25 @@
       "lectura": "ロックナット",
       "es": "Contratuerca",
       "significado": "Contratuerca.",
-      "uso": "Fija el tubo metálico a la caja, apretando por ambos lados de la pared de la caja.",
+      "uso": "Fija el tubo metálico (o la ねじなしボックスコネクタ) a la caja. Aparece en las preguntas de 金属管工事 y en el 技能.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "技能試験の概要と注意すべきポイント 2025 (ロックナットで金属管とボックスを接続)",
+          "url": "https://www.shiken.or.jp/construction/upload/point2025_2.pdf"
+        },
+        {
+          "texto": "eleking 金属管工事: ロックナットを締め付けて電線管をボックスに固定",
+          "url": "https://eleking.net/k21/k21c/k21c-metalconduit.html"
+        },
+        {
+          "texto": "学科 2024下期 問23 ハ 薄鋼電線管とアウトレットボックスの接続部にロックナット (apropiado)",
+          "url": "https://www.shiken.or.jp/construction/upload/20241027_co_second_q01.pdf"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-031",
@@ -382,7 +880,22 @@
       "uso": "Une, por ejemplo, un 薄鋼電線管 con un tubo metálico flexible.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "TERASU辞書 Panasonic: 金属製可とう電線管 (コンビネーションカップリング une flexible con tubo de acero)",
+          "url": "https://www2.panasonic.biz/jp/terasu/skill/dictionary/plica.html"
+        },
+        {
+          "texto": "学科 2024下期 問23 ロ 薄鋼電線管相互にコンビネーションカップリング = 不適切 (respuesta oficial ロ)",
+          "url": "https://www.shiken.or.jp/construction/upload/20241027_co_second_q01.pdf"
+        },
+        {
+          "texto": "Respuesta oficial 2024下期",
+          "url": "https://www.shiken.or.jp/construction/upload/20241027_co_second_a01.pdf"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-032",
@@ -391,10 +904,29 @@
       "lectura": "アウトレットボックス",
       "es": "Caja de salida",
       "significado": "Caja de salida metálica (caja de paso o derivación).",
-      "uso": "Es el punto de empalme y de salida en 金属管工事. Los agujeros para el tubo se hacen con ノックアウトパンチャ.",
+      "uso": "Caja de empalme, tirado y salida en 金属管工事 (no sirve para agrupar 配線用遮断器). Trae agujeros troquelados (ノックアウト) para los tubos; en el 技能 se usan solo esos agujeros.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "学科 2024上期 問11 usos de アウトレットボックス (respuesta oficial ハ)",
+          "url": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf"
+        },
+        {
+          "texto": "Respuesta oficial 2024上期",
+          "url": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
+        },
+        {
+          "texto": "学科 2024下期 問13 ノックアウトパンチャ = 金属製キャビネット",
+          "url": "https://www.shiken.or.jp/construction/upload/20241027_co_second_q01.pdf"
+        },
+        {
+          "texto": "技能試験の概要 2025: usar solo los agujeros ya troquelados",
+          "url": "https://www.shiken.or.jp/construction/upload/point2025_2.pdf"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-033",
@@ -404,9 +936,20 @@
       "es": "Espárrago para luminaria",
       "significado": "Espárrago de fijación para luminarias.",
       "uso": "Se monta en la caja y sostiene luminarias pesadas.",
-      "verificar": false,
-      "nota": "",
-      "imagen": ""
+      "verificar": true,
+      "nota": "Ninguna fuente leída describe la フィクスチュアスタッド; en el examen solo aparece como distractor. El uso es coherente, pero falta confirmarlo.",
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "学科 2024下期 問11 ハ フィクスチュアスタッド (solo como distractor)",
+          "url": "https://www.shiken.or.jp/construction/upload/20241027_co_second_q01.pdf"
+        },
+        {
+          "texto": "HOZAN 材料及び工具5 問1 opción ニ \"天井に比較的重い照明器具を取り付けるために用いる\" (distractor sin nombre)",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1material5"
+        }
+      ],
+      "verificacion": "parcial"
     },
     {
       "id": "d2k-034",
@@ -418,7 +961,22 @@
       "uso": "La abertura va hacia abajo. El extremo se cierra con エンドキャップ y los soportes se ponen cada 2 m como máximo.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "電技解釈 第165条 第3項 四号 (支持点間 2m以下), 五号 (終端部 閉そく), 六号 (開口部 下向き)",
+          "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf"
+        },
+        {
+          "texto": "学科 2024上期 問20 (respuesta oficial ニ: atravesar el muro es inadecuado; abertura hacia abajo con 1,5 m y エンドキャップ son correctos)",
+          "url": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf"
+        },
+        {
+          "texto": "Respuestas oficiales 2024上期",
+          "url": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-035",
@@ -430,7 +988,26 @@
       "uso": "Se enrolla estirándola, con una vuelta a medio solape como mínimo, y luego se protege con cinta (保護テープ). La ビニルテープ sola necesita dos vueltas a medio solape.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "学科 2022下期 午後 問19 (respuesta oficial ハ: ビニルテープ 1回 es inadecuado; イ = 自己融着 1回 + 保護テープ 1回 es correcto)",
+          "url": "https://www.shiken.or.jp/construction/upload/20221030_co_second_q02.pdf"
+        },
+        {
+          "texto": "Respuestas oficiales 2022下期 午後",
+          "url": "https://www.shiken.or.jp/construction/upload/20221030_co_second_a02.pdf"
+        },
+        {
+          "texto": "日東シンコー: instrucciones de la cinta autovulcanizante (estirar 2–2,5 veces y aplicar a medio solape)",
+          "url": "https://www.nittoshinko.co.jp/products/self-fusing-tape/guide.php"
+        },
+        {
+          "texto": "電技解釈 第12条 (aislar el empalme con algo de eficacia igual o superior al aislante del conductor)",
+          "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-036",
@@ -442,7 +1019,22 @@
       "uso": "Una vuelta a medio solape como mínimo. En la pregunta del método de aislar un empalme se compara con la ビニルテープ y con la cinta autovulcanizante.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "学科 2024下期 問19 (respuesta oficial ハ; la opción ロ, 黒色粘着性ポリエチレン 0,5 mm a medio solape 1 vuelta, es correcta)",
+          "url": "https://www.shiken.or.jp/construction/upload/20241027_co_second_q01.pdf"
+        },
+        {
+          "texto": "Respuestas oficiales 2024下期",
+          "url": "https://www.shiken.or.jp/construction/upload/20241027_co_second_a01.pdf"
+        },
+        {
+          "texto": "古河電工 エフコテープ2号 (cumple el 黒色粘着性ポリエチレン絶縁テープ del 内線規程, 1/2 solape)",
+          "url": "https://www.feps.co.jp/products/electro"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-037",
@@ -452,9 +1044,24 @@
       "es": "Interruptor termomagnético",
       "significado": "Interruptor termomagnético (MCCB / breaker).",
       "uso": "Símbolo: cuadro con B. Aparece en preguntas de 分岐回路 (relación entre corriente nominal, sección del cable y コンセント).",
-      "verificar": true,
-      "nota": "Forma del símbolo (cuadro con B) dibujada de memoria; falta confirmarla con JIS C 0303 o con un 配線図 oficial.",
-      "imagen": "img/simbolos/haisenyou-shadanki.svg"
+      "verificar": false,
+      "nota": "",
+      "imagen": "img/simbolos/haisenyou-shadanki.svg",
+      "fuentes": [
+        {
+          "texto": "eleking.net 配線図の図記号 (2種 学科)",
+          "url": "https://eleking.net/k21/k21i/k21i-symbol.html"
+        },
+        {
+          "texto": "初めて受ける第二種電気工事士 開閉器・盤の図記号",
+          "url": "https://hajimetedenkikouji.web.fc2.com/haisenzu4/index.html"
+        },
+        {
+          "texto": "JIS C 0303:2000 (texto en kikakurui.com; las formas de los símbolos son imágenes y no se extraen)",
+          "url": "https://kikakurui.com/c0/C0303-2000-01.html"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-038",
@@ -463,10 +1070,37 @@
       "lectura": "ろうでんしゃだんき",
       "es": "Interruptor diferencial",
       "significado": "Interruptor diferencial (ELCB).",
-      "uso": "Símbolo: cuadro con E. Para protección de personas se usa uno de 定格感度電流 30 mA y de 動作時間 0,1 s como máximo (高感度高速形).",
+      "uso": "Símbolo: cuadro con E; con B y E (□BE) es el 漏電遮断器 con protección de sobrecarga, el que más aparece en los 配線図. Para protección de personas se usa el 高感度高速形: 定格感度電流 30 mA o menos y 動作時間 0,1 s o menos.",
       "verificar": true,
-      "nota": "Forma del símbolo (cuadro con E) dibujada de memoria; falta confirmarla con JIS C 0303 o con un 配線図 oficial.",
-      "imagen": "img/simbolos/rouden-shadanki.svg"
+      "nota": "Los valores 30 mA / 0,1 s están confirmados (JIS C 8201-2-2). La forma □E solo la confirma una web de estudio, no JIS C 0303 ni un 配線図 oficial.",
+      "imagen": "img/simbolos/rouden-shadanki.svg",
+      "fuentes": [
+        {
+          "texto": "eleking.net 配線図の図記号 (2種 学科)",
+          "url": "https://eleking.net/k21/k21i/k21i-symbol.html"
+        },
+        {
+          "texto": "日本電気技術者協会 感電災害の防止対策 (高感度高速形 30 mA, 0,1 s)",
+          "url": "https://www.jeea.or.jp/course/contents/10102"
+        },
+        {
+          "texto": "JIS C 0303:2000 (texto en kikakurui.com; las formas de los símbolos son imágenes y no se extraen)",
+          "url": "https://kikakurui.com/c0/C0303-2000-01.html"
+        },
+        {
+          "texto": "JIS C 8201-2-2 2.3.10A (高速形: ≤0,1 s) y 2.3.10C (高感度形: ≤30 mA)",
+          "url": "https://kikakurui.com/c8/C8201-2-2-2011-01.html"
+        },
+        {
+          "texto": "Panasonic: 内線規程 1375-2, para protección contra electrocución se usa 高感度・高速形 (30 mA o menos, 0,1 s o menos)",
+          "url": "https://www2.panasonic.biz/jp/basics/electric/breakers/earth-leakage-breaker"
+        },
+        {
+          "texto": "学科 2025下期 問22 (premisa: 定格感度電流 30 mA, 動作時間 0,1 s 以下)",
+          "url": "https://www.shiken.or.jp/construction/upload/20251026_co_second_q01.pdf"
+        }
+      ],
+      "verificacion": "parcial"
     },
     {
       "id": "d2k-039",
@@ -474,11 +1108,26 @@
       "termino": "開閉器",
       "lectura": "かいへいき",
       "es": "Seccionador",
-      "significado": "Seccionador o interruptor (sin protección).",
-      "uso": "Símbolo: cuadro con S. No hay que confundirlo con B (配線用遮断器) ni con E (漏電遮断器).",
-      "verificar": true,
-      "nota": "Forma del símbolo (cuadro con S) dibujada de memoria; falta confirmarla con JIS C 0303 o con un 配線図 oficial.",
-      "imagen": "img/simbolos/kaiheiki.svg"
+      "significado": "Interruptor de maniobra manual (por ejemplo, カバー付ナイフスイッチ o 箱開閉器).",
+      "uso": "Símbolo: cuadro con S. Puede llevar fusibles, pero no dispara solo como el 配線用遮断器 (□B). No hay que confundirlo con □B ni con □E (漏電遮断器).",
+      "verificar": false,
+      "nota": "",
+      "imagen": "img/simbolos/kaiheiki.svg",
+      "fuentes": [
+        {
+          "texto": "eleking.net 配線図の図記号 (2種 学科)",
+          "url": "https://eleking.net/k21/k21i/k21i-symbol.html"
+        },
+        {
+          "texto": "初めて受ける第二種電気工事士 開閉器・盤の図記号",
+          "url": "https://hajimetedenkikouji.web.fc2.com/haisenzu4/index.html"
+        },
+        {
+          "texto": "JIS C 0303:2000 (texto en kikakurui.com; las formas de los símbolos son imágenes y no se extraen)",
+          "url": "https://kikakurui.com/c0/C0303-2000-01.html"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-040",
@@ -489,8 +1138,27 @@
       "significado": "Medidor de energía (kWh).",
       "uso": "Símbolo: cuadro con Wh. Suele estar en la acometida del 配線図.",
       "verificar": true,
-      "nota": "Forma del símbolo (cuadro con Wh) dibujada de memoria; falta confirmarla con JIS C 0303 o con un 配線図 oficial.",
-      "imagen": "img/simbolos/denryokuryoukei.svg"
+      "nota": "Que lleva Wh está confirmado. JIS C 0303 tiene dos variantes (simple y 箱入り又はフード付) y no se pudo confirmar cuál corresponde al cuadro dibujado.",
+      "imagen": "img/simbolos/denryokuryoukei.svg",
+      "fuentes": [
+        {
+          "texto": "eleking.net 配線図の図記号 (2種 学科)",
+          "url": "https://eleking.net/k21/k21i/k21i-symbol.html"
+        },
+        {
+          "texto": "ワット・コンサルティング 分電盤に関する図面記号 (電力量計)",
+          "url": "https://www.jp-wat.com/column/biz/distribution-board-drawing-symbols"
+        },
+        {
+          "texto": "JIS C 0303:2000 (texto en kikakurui.com; las formas de los símbolos son imágenes y no se extraen)",
+          "url": "https://kikakurui.com/c0/C0303-2000-01.html"
+        },
+        {
+          "texto": "初めて受ける第二種電気工事士 開閉器・盤の図記号",
+          "url": "https://hajimetedenkikouji.web.fc2.com/haisenzu4/index.html"
+        }
+      ],
+      "verificacion": "parcial"
     },
     {
       "id": "d2k-041",
@@ -502,7 +1170,26 @@
       "uso": "Está formado por 電磁接触器 y 熱動継電器. Se usa para el arranque y la protección de motores trifásicos.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "Kotobank: 電磁開閉器 (でんじかいへいき)",
+          "url": "https://kotobank.jp/word/電磁開閉器"
+        },
+        {
+          "texto": "Wikipedia 電磁開閉器: 電磁接触器 + サーマルリレー; uso en motores",
+          "url": "https://ja.wikipedia.org/wiki/%E9%9B%BB%E7%A3%81%E9%96%8B%E9%96%89%E5%99%A8"
+        },
+        {
+          "texto": "学科 2024下期 問17 (電磁接触器/熱動継電器 en la foto)",
+          "url": "https://www.shiken.or.jp/construction/upload/20241027_co_second_q01.pdf"
+        },
+        {
+          "texto": "三菱電機 カタログ MS-T/N (電磁開閉器・電磁接触器・サーマルリレー)",
+          "url": "http://dl.mitsubishielectric.co.jp/dl/fa/document/catalog/lvsw/l02031/L%28NA%2902031-G%281712%29_17B.pdf"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-042",
@@ -514,7 +1201,22 @@
       "uso": "Protege el motor contra la sobrecarga. La respuesta típica en la pregunta de función es 過負荷保護.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "三菱電機 FA FAQ: サーマルリレー (protección contra sobrecarga, evita quemar el motor)",
+          "url": "https://fa-dic.mitsubishielectric.co.jp/faq/show/18986"
+        },
+        {
+          "texto": "Glosario Watanabe: 熱動継電器 = ねつどうけいでんき",
+          "url": "https://kabu-watanabe.com/glossary/denki/24ne"
+        },
+        {
+          "texto": "TERASU辞書 Panasonic: サーマルリレー（熱動継電器）",
+          "url": "https://www2.panasonic.biz/jp/terasu/skill/dictionary/thermalrelay.html"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-043",
@@ -526,7 +1228,22 @@
       "uso": "Se conecta en paralelo con el motor para mejorar el 力率（りきりつ）. Al mejorar el factor de potencia, baja la corriente de línea.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "農水省 標準仕様 (2.5 力率改善): el 進相コンデンサ se instala en paralelo con el motor",
+          "url": "https://www.maff.go.jp/j//nousin/seko/kyotu_siyosyo/kikaisisin/attach/pdf/denkisetsubi_koutei-14.pdf"
+        },
+        {
+          "texto": "Panasonic Industry: efecto del 進相コンデンサ (reduce la corriente reactiva y la corriente total)",
+          "url": "https://industrial.panasonic.com/content/data/CP/PDF/%E3%81%94%E4%BD%BF%E7%94%A8%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D.pdf"
+        },
+        {
+          "texto": "学科 2025上期 問35 (respuesta oficial イ: no es el 進相コンデンサ; la opción ニ lo define como 'para mejorar el 力率 del motor')",
+          "url": "https://www.shiken.or.jp/construction/upload/20250525_co_second_q01.pdf"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-044",
@@ -535,10 +1252,25 @@
       "lectura": "リモコンリレー",
       "es": "Relé de control remoto",
       "significado": "Relé de control remoto de iluminación.",
-      "uso": "Aparece en 配線図 de sistemas de alumbrado con control centralizado. Su símbolo es ▲ y se cuentan cuántas hay en el tablero.",
-      "verificar": true,
-      "nota": "Verificar el símbolo (▲) contra JIS C 0303 antes de dibujarlo.",
-      "imagen": ""
+      "uso": "Aparece en 配線図 de sistemas de alumbrado con control centralizado. Su símbolo es un triángulo negro (▲) y se pregunta cuántas hay en el tablero.",
+      "verificar": false,
+      "nota": "",
+      "imagen": "img/simbolos/rimokon-relay.svg",
+      "fuentes": [
+        {
+          "texto": "Panasonic 配線図記号の読み方：スイッチ・コンセント (extracto del 電気設備工事標準図 de 国交省)",
+          "url": "https://www2.panasonic.biz/jp/basics/electric/electricity/symbols/switches-outlets"
+        },
+        {
+          "texto": "eleking.net 配線図の図記号 (2種 学科)",
+          "url": "https://eleking.net/k21/k21i/k21i-symbol.html"
+        },
+        {
+          "texto": "JIS C 0303:2000 (texto en kikakurui.com; las formas de los símbolos son imágenes y no se extraen)",
+          "url": "https://kikakurui.com/c0/C0303-2000-01.html"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-045",
@@ -549,8 +1281,23 @@
       "significado": "Roseta de techo para colgar luminarias (enganche giratorio).",
       "uso": "Tipos: 丸形 y 角形. En 配線図 se distingue de シーリング (天井直付) y de 天井コンセント.",
       "verificar": false,
-      "nota": "Símbolo gráfico pendiente de verificación; por eso no tiene imagen.",
-      "imagen": ""
+      "nota": "",
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "JIS C 0303:2000 (texto en kikakurui.com; las formas de los símbolos son imágenes y no se extraen)",
+          "url": "https://kikakurui.com/c0/C0303-2000-01.html"
+        },
+        {
+          "texto": "Panasonic FAQ 引掛シーリングとは",
+          "url": "https://jpn.faq.panasonic.com/app/answers/detail/a_id/87716/"
+        },
+        {
+          "texto": "eleking.net 配線図の図記号 (2種 学科)",
+          "url": "https://eleking.net/k21/k21i/k21i-symbol.html"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-046",
@@ -562,7 +1309,26 @@
       "uso": "Mide tensión, resistencia y continuidad. Se distingue del 絶縁抵抗計 porque no mide aislamiento a 500 V.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "Kotobank: 回路計 (かいろけい) = テスター",
+          "url": "https://kotobank.jp/word/回路計"
+        },
+        {
+          "texto": "HOZAN 材料及び工具2 (回路計: 電流、電圧、抵抗) y 材料及び工具5 問9 (回路計と絶縁抵抗の測定 = incorrecto)",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1material5"
+        },
+        {
+          "texto": "学科 2024上期 問24 (medición de resistencia con 回路計)",
+          "url": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf"
+        },
+        {
+          "texto": "学科 2025下期 問24 (導通試験 con 回路計; respuesta oficial イ)",
+          "url": "https://www.shiken.or.jp/construction/upload/20251026_co_second_q01.pdf"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-047",
@@ -574,7 +1340,18 @@
       "uso": "Valores mínimos para circuitos de baja tensión: 対地電圧 150 V o menos → 0,1 MΩ; 300 V o menos → 0,2 MΩ; más de 300 V → 0,4 MΩ.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "電技省令 第58条 (tabla de 絶縁抵抗: 300 V o menos con 対地電圧 150 V o menos 0,1 MΩ; resto hasta 300 V 0,2 MΩ; más de 300 V 0,4 MΩ)",
+          "url": "https://laws.e-gov.go.jp/law/409M50000400052"
+        },
+        {
+          "texto": "学科 2025下期 問39 (respuesta oficial イ = 0,1 MΩ)",
+          "url": "https://www.shiken.or.jp/construction/upload/20251026_co_second_a01.pdf"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-048",
@@ -586,7 +1363,22 @@
       "uso": "Usa 2 補助接地極 en línea recta, separados unos 10 m. D種接地工事: 100 Ω o menos (500 Ω o menos si hay un dispositivo que corta en 0,5 s como máximo).",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "学科 2025下期 問26 (respuesta oficial イ: 補助接地極 2 en línea recta, uno tras otro a unos 10 m)",
+          "url": "https://www.shiken.or.jp/construction/upload/20251026_co_second_q01.pdf"
+        },
+        {
+          "texto": "Respuestas oficiales 2025下期",
+          "url": "https://www.shiken.or.jp/construction/upload/20251026_co_second_a01.pdf"
+        },
+        {
+          "texto": "電技解釈 第17条 第4項第一号 (D種: 100 Ω, o 500 Ω si un dispositivo corta en 0,5 s)",
+          "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-049",
@@ -598,7 +1390,22 @@
       "uso": "Se abrazan todos los conductores del circuito a la vez (ida y vuelta) para medir la fuga. Para medir la corriente de carga se abraza un solo conductor.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "HIOKI: cómo usar la pinza de fuga (se abrazan todos los conductores a la vez y el 接地線 se mide solo)",
+          "url": "https://www.hioki.com/jp-ja/learning/how-to/u-clamp-meters.html"
+        },
+        {
+          "texto": "共立電気計器 クランプメータガイドブック (単相3線 → 3 conductores juntos, incluido el neutro)",
+          "url": "https://www.kew-ltd.co.jp/tech-library/knowledge/guidebook/clampmeter"
+        },
+        {
+          "texto": "学科 2024下期 問27 (método con クランプ形漏れ電流計 en 単相3線; respuesta oficial ハ, opciones en figura)",
+          "url": "https://www.shiken.or.jp/construction/upload/20241027_co_second_q01.pdf"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-050",
@@ -610,7 +1417,26 @@
       "uso": "Comprueba la 相順 de un circuito trifásico (por ejemplo, antes de conectar un motor). No mide tensión ni aislamiento.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "Glosario Watanabe: 検相器 = けんそうき",
+          "url": "https://kabu-watanabe.com/glossary/denki/09ke/index.html"
+        },
+        {
+          "texto": "HOZAN 材料及び工具5 問9 (検相器: 三相回路の相順の確認)",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1material5"
+        },
+        {
+          "texto": "TERASU辞書 Panasonic: 検相器 (正相/欠相)",
+          "url": "https://www2.panasonic.biz/jp/terasu/skill/dictionary/phaserotation.html"
+        },
+        {
+          "texto": "共立 KEW 8031",
+          "url": "https://www.kew-ltd.co.jp/en/products/detail/01294"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-051",
@@ -622,7 +1448,18 @@
       "uso": "Comprueba si hay tensión (充電の有無) antes de trabajar.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "Kotobank: 検電器 (けんでんき)",
+          "url": "https://kotobank.jp/word/検電器-60941"
+        },
+        {
+          "texto": "HOZAN 材料及び工具5 問8/問9 (検電器: 電路の充電の有無を確認)",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1material5"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-052",
@@ -634,7 +1471,18 @@
       "uso": "Comprueba la continuidad y el conexionado de un circuito sin tensión.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "学科 2025下期 問24 ④導通試験: 回路計や導通チェッカーで配線の断線や誤接続を確認 (respuesta oficial イ)",
+          "url": "https://www.shiken.or.jp/construction/upload/20251026_co_second_q01.pdf"
+        },
+        {
+          "texto": "Respuesta oficial 2025下期",
+          "url": "https://www.shiken.or.jp/construction/upload/20251026_co_second_a01.pdf"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-053",
@@ -646,7 +1494,26 @@
       "uso": "Es la base de todos los interruptores en 配線図. Las letras al lado (傍記) indican el tipo. La versión ワイド形 se dibuja con un rombo negro (◆).",
       "verificar": false,
       "nota": "",
-      "imagen": "img/simbolos/tenmetsuki.svg"
+      "imagen": "img/simbolos/tenmetsuki.svg",
+      "fuentes": [
+        {
+          "texto": "Panasonic 配線図記号の読み方：スイッチ・コンセント (extracto del 電気設備工事標準図 de 国交省)",
+          "url": "https://www2.panasonic.biz/jp/basics/electric/electricity/symbols/switches-outlets"
+        },
+        {
+          "texto": "eleking.net 配線図の図記号 (2種 学科)",
+          "url": "https://eleking.net/k21/k21i/k21i-symbol.html"
+        },
+        {
+          "texto": "ワット・コンサルティング 電気設備の図面記号186選",
+          "url": "https://www.jp-wat.com/column/biz/denki/denkikigou/"
+        },
+        {
+          "texto": "JIS C 0303:2000 (texto en kikakurui.com; las formas de los símbolos son imágenes y no se extraen)",
+          "url": "https://kikakurui.com/c0/C0303-2000-01.html"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-054",
@@ -655,10 +1522,25 @@
       "lectura": "さんろスイッチ",
       "es": "Interruptor de 3 vías (escalera)",
       "significado": "Interruptor de conmutación (de escalera).",
-      "uso": "Dos 3路 controlan una lámpara desde dos lugares. Entre los dos 3路 van 3 conductores (en la pregunta de 電線本数).",
+      "uso": "Dos 3路 controlan una lámpara desde dos lugares. Entre los dos 3路 van 2 conductores de conmutación (terminales 1-1 y 3-3). En las preguntas de 電線本数 hay que dibujar el 複線図: por donde pasa también el conductor de alimentación o de retorno salen 3 o más.",
       "verificar": false,
       "nota": "",
-      "imagen": "img/simbolos/tenmetsuki-3ro.svg"
+      "imagen": "img/simbolos/tenmetsuki-3ro.svg",
+      "fuentes": [
+        {
+          "texto": "eleking.net 学科 平成21年度 問33 複線図 (3路の1-1 y 3-3)",
+          "url": "https://eleking.net/k21/k21q/k21q-h2133f.html"
+        },
+        {
+          "texto": "eleking.net 配線図の図記号 (2種 学科)",
+          "url": "https://eleking.net/k21/k21i/k21i-symbol.html"
+        },
+        {
+          "texto": "Panasonic 配線図記号の読み方：スイッチ・コンセント (extracto del 電気設備工事標準図 de 国交省)",
+          "url": "https://www2.panasonic.biz/jp/basics/electric/electricity/symbols/switches-outlets"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-055",
@@ -670,7 +1552,22 @@
       "uso": "Va entre dos 3路 y permite controlar desde tres o más lugares.",
       "verificar": false,
       "nota": "",
-      "imagen": "img/simbolos/tenmetsuki-4ro.svg"
+      "imagen": "img/simbolos/tenmetsuki-4ro.svg",
+      "fuentes": [
+        {
+          "texto": "eleking.net 配線図の図記号 (2種 学科)",
+          "url": "https://eleking.net/k21/k21i/k21i-symbol.html"
+        },
+        {
+          "texto": "eleking.net スイッチ（機器をON/OFFする器具）",
+          "url": "https://eleking.net/k21/k21k/k21k-wiring1.html"
+        },
+        {
+          "texto": "Panasonic 配線図記号の読み方：スイッチ・コンセント (extracto del 電気設備工事標準図 de 国交省)",
+          "url": "https://www2.panasonic.biz/jp/basics/electric/electricity/symbols/switches-outlets"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-056",
@@ -682,7 +1579,26 @@
       "uso": "Se confunde con ●L. H: el piloto se enciende cuando la carga está OFF, para encontrar el interruptor en la oscuridad.",
       "verificar": false,
       "nota": "",
-      "imagen": "img/simbolos/tenmetsuki-h.svg"
+      "imagen": "img/simbolos/tenmetsuki-h.svg",
+      "fuentes": [
+        {
+          "texto": "JIS C 0303:2000 (texto en kikakurui.com; las formas de los símbolos son imágenes y no se extraen)",
+          "url": "https://kikakurui.com/c0/C0303-2000-01.html"
+        },
+        {
+          "texto": "HOZAN 第二種電工試験の虎 配線図記号2 (スイッチ)",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1kigou2/"
+        },
+        {
+          "texto": "eleking.net 配線図の図記号 (2種 学科)",
+          "url": "https://eleking.net/k21/k21i/k21i-symbol.html"
+        },
+        {
+          "texto": "eleking.net スイッチ（機器をON/OFFする器具）",
+          "url": "https://eleking.net/k21/k21k/k21k-wiring1.html"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-057",
@@ -691,10 +1607,25 @@
       "lectura": "かくにんひょうじとうをないぞうするてんめつき",
       "es": "Interruptor con piloto de confirmación",
       "significado": "Interruptor con piloto de confirmación (se ilumina con la carga encendida).",
-      "uso": "L: el piloto se enciende cuando la carga está ON (por ejemplo, un ventilador que no se ve). En los circuitos del examen la lámpara va en paralelo con la carga, por eso suele cambiar el número de conductores (pregunta de 電線本数).",
+      "uso": "L: el piloto se enciende cuando la carga está ON (por ejemplo, un ventilador que no se ve). Se confunde con ●H, que se enciende con la carga OFF.",
       "verificar": false,
       "nota": "",
-      "imagen": "img/simbolos/tenmetsuki-l.svg"
+      "imagen": "img/simbolos/tenmetsuki-l.svg",
+      "fuentes": [
+        {
+          "texto": "JIS C 0303:2000 (texto en kikakurui.com; las formas de los símbolos son imágenes y no se extraen)",
+          "url": "https://kikakurui.com/c0/C0303-2000-01.html"
+        },
+        {
+          "texto": "HOZAN 第二種電工試験の虎 配線図記号2 (スイッチ)",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1kigou2/"
+        },
+        {
+          "texto": "eleking.net スイッチ（機器をON/OFFする器具）",
+          "url": "https://eleking.net/k21/k21k/k21k-wiring1.html"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-058",
@@ -703,10 +1634,21 @@
       "lectura": "じどうてんめつき",
       "es": "Interruptor crepuscular",
       "significado": "Interruptor crepuscular (fotocélula).",
-      "uso": "Enciende el alumbrado exterior al anochecer y lo apaga al amanecer. Suele ir con ●3 o ●T en el mismo circuito.",
+      "uso": "Enciende el alumbrado exterior al oscurecer y lo apaga con la luz del día. Se anota A y la capacidad, por ejemplo ●A(3A).",
       "verificar": false,
       "nota": "",
-      "imagen": "img/simbolos/tenmetsuki-a.svg"
+      "imagen": "img/simbolos/tenmetsuki-a.svg",
+      "fuentes": [
+        {
+          "texto": "JIS C 0303:2000 (texto en kikakurui.com; las formas de los símbolos son imágenes y no se extraen)",
+          "url": "https://kikakurui.com/c0/C0303-2000-01.html"
+        },
+        {
+          "texto": "eleking.net 配線図の図記号 (2種 学科)",
+          "url": "https://eleking.net/k21/k21i/k21i-symbol.html"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-059",
@@ -718,7 +1660,22 @@
       "uso": "Apaga la carga algún tiempo después de accionarlo (por ejemplo, el ventilador del baño).",
       "verificar": false,
       "nota": "",
-      "imagen": "img/simbolos/tenmetsuki-d.svg"
+      "imagen": "img/simbolos/tenmetsuki-d.svg",
+      "fuentes": [
+        {
+          "texto": "Panasonic 配線図記号の読み方：スイッチ・コンセント (extracto del 電気設備工事標準図 de 国交省)",
+          "url": "https://www2.panasonic.biz/jp/basics/electric/electricity/symbols/switches-outlets"
+        },
+        {
+          "texto": "eleking.net 配線図の図記号 (2種 学科)",
+          "url": "https://eleking.net/k21/k21i/k21i-symbol.html"
+        },
+        {
+          "texto": "JIS C 0303:2000 (texto en kikakurui.com; las formas de los símbolos son imágenes y no se extraen)",
+          "url": "https://kikakurui.com/c0/C0303-2000-01.html"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-060",
@@ -730,7 +1687,26 @@
       "uso": "Cuidado: junto a ● la T significa temporizador, pero junto a una コンセント la T significa 引掛形.",
       "verificar": false,
       "nota": "",
-      "imagen": "img/simbolos/tenmetsuki-t.svg"
+      "imagen": "img/simbolos/tenmetsuki-t.svg",
+      "fuentes": [
+        {
+          "texto": "JIS C 0303:2000 (texto en kikakurui.com; las formas de los símbolos son imágenes y no se extraen)",
+          "url": "https://kikakurui.com/c0/C0303-2000-01.html"
+        },
+        {
+          "texto": "Panasonic 配線図記号の読み方：スイッチ・コンセント (extracto del 電気設備工事標準図 de 国交省)",
+          "url": "https://www2.panasonic.biz/jp/basics/electric/electricity/symbols/switches-outlets"
+        },
+        {
+          "texto": "学科 2025上期 問40 (引掛形コンセントの傍記; opciones EL/H/T/LK)",
+          "url": "https://www.shiken.or.jp/construction/upload/20250525_co_second_q01.pdf"
+        },
+        {
+          "texto": "学科 2025上期 respuestas oficiales (問40 = ハ = T; 問33 = ロ)",
+          "url": "https://www.shiken.or.jp/construction/upload/20250525_co_second_a01.pdf"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-061",
@@ -740,9 +1716,24 @@
       "es": "Interruptor con sensor de presencia",
       "significado": "Interruptor automático con sensor infrarrojo de presencia.",
       "uso": "En 配線図 se distingue de ●A (自動点滅器, que funciona con luz) y de ●D (遅延).",
-      "verificar": true,
-      "nota": "El 傍記 RAS no aparece en la tabla de fabricante consultada; falta confirmarlo con JIS C 0303.",
-      "imagen": "img/simbolos/tenmetsuki-ras.svg"
+      "verificar": false,
+      "nota": "",
+      "imagen": "img/simbolos/tenmetsuki-ras.svg",
+      "fuentes": [
+        {
+          "texto": "Panasonic 配線図記号の読み方：スイッチ・コンセント (extracto del 電気設備工事標準図 de 国交省)",
+          "url": "https://www2.panasonic.biz/jp/basics/electric/electricity/symbols/switches-outlets"
+        },
+        {
+          "texto": "eleking.net 配線図の図記号 (2種 学科)",
+          "url": "https://eleking.net/k21/k21i/k21i-symbol.html"
+        },
+        {
+          "texto": "JIS C 0303:2000 (texto en kikakurui.com; las formas de los símbolos son imágenes y no se extraen)",
+          "url": "https://kikakurui.com/c0/C0303-2000-01.html"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-062",
@@ -754,7 +1745,22 @@
       "uso": "Forma una serie con ET y EET. Hay que identificar cuál corresponde al dibujo de la placa.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "eleking.net 配線図の図記号 (2種 学科)",
+          "url": "https://eleking.net/k21/k21i/k21i-symbol.html"
+        },
+        {
+          "texto": "HOZAN 第二種電工試験の虎 配線図記号1 (コンセント)",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1kigou1/"
+        },
+        {
+          "texto": "JIS C 0303:2000 (texto en kikakurui.com; las formas de los símbolos son imágenes y no se extraen)",
+          "url": "https://kikakurui.com/c0/C0303-2000-01.html"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-063",
@@ -766,7 +1772,22 @@
       "uso": "La toma no tiene tercer polo, pero tiene un tornillo de tierra. Se compara con E y EET en la misma pregunta.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "eleking.net 配線図の図記号 (2種 学科)",
+          "url": "https://eleking.net/k21/k21i/k21i-symbol.html"
+        },
+        {
+          "texto": "HOZAN 第二種電工試験の虎 配線図記号1 (コンセント)",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1kigou1/"
+        },
+        {
+          "texto": "JIS C 0303:2000 (texto en kikakurui.com; las formas de los símbolos son imágenes y no se extraen)",
+          "url": "https://kikakurui.com/c0/C0303-2000-01.html"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-064",
@@ -778,7 +1799,22 @@
       "uso": "Tiene ambos, tercer polo y tornillo de tierra. Es una de las opciones típicas junto a E y ET.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "eleking.net 配線図の図記号 (2種 学科)",
+          "url": "https://eleking.net/k21/k21i/k21i-symbol.html"
+        },
+        {
+          "texto": "HOZAN 第二種電工試験の虎 配線図記号1 (コンセント)",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1kigou1/"
+        },
+        {
+          "texto": "JIS C 0303:2000 (texto en kikakurui.com; las formas de los símbolos son imágenes y no se extraen)",
+          "url": "https://kikakurui.com/c0/C0303-2000-01.html"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-065",
@@ -790,7 +1826,22 @@
       "uso": "Se usa en enchufes e interruptores exteriores. En 配線図 aparece en la terraza o en la fachada.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "JIS C 0303:2000 (texto en kikakurui.com; las formas de los símbolos son imágenes y no se extraen)",
+          "url": "https://kikakurui.com/c0/C0303-2000-01.html"
+        },
+        {
+          "texto": "HOZAN 第二種電工試験の虎 配線図記号2 (スイッチ)",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1kigou2/"
+        },
+        {
+          "texto": "eleking.net 配線図の図記号 (2種 学科)",
+          "url": "https://eleking.net/k21/k21i/k21i-symbol.html"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-066",
@@ -802,7 +1853,22 @@
       "uso": "Se confunde con T (引掛形). LK: se inserta y se gira para bloquear (clavija normal). T: necesita una clavija especial de enganche.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "eleking.net 配線図の図記号 (2種 学科)",
+          "url": "https://eleking.net/k21/k21i/k21i-symbol.html"
+        },
+        {
+          "texto": "工事士.com コンセントの記号一覧 (LK y T)",
+          "url": "https://koujishi.com/denkikouji/208"
+        },
+        {
+          "texto": "HOZAN 第二種電工試験の虎 配線図記号1 (コンセント)",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1kigou1/"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-067",
@@ -814,7 +1880,26 @@
       "uso": "Junto a una コンセント es 引掛形; junto a ● es temporizador. Es una trampa clásica.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "学科 2025上期 問40 (引掛形コンセントの傍記; opciones EL/H/T/LK)",
+          "url": "https://www.shiken.or.jp/construction/upload/20250525_co_second_q01.pdf"
+        },
+        {
+          "texto": "学科 2025上期 respuestas oficiales (問40 = ハ = T; 問33 = ロ)",
+          "url": "https://www.shiken.or.jp/construction/upload/20250525_co_second_a01.pdf"
+        },
+        {
+          "texto": "eleking.net 配線図の図記号 (2種 学科)",
+          "url": "https://eleking.net/k21/k21i/k21i-symbol.html"
+        },
+        {
+          "texto": "HOZAN 第二種電工試験の虎 配線図記号1 (コンセント)",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1kigou1/"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-068",
@@ -826,7 +1911,22 @@
       "uso": "Se pregunta como opción junto a E, ET y EET.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "eleking.net 配線図の図記号 (2種 学科)",
+          "url": "https://eleking.net/k21/k21i/k21i-symbol.html"
+        },
+        {
+          "texto": "HOZAN 第二種電工試験の虎 配線図記号1 (コンセント)",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1kigou1/"
+        },
+        {
+          "texto": "JIS C 0303:2000 (texto en kikakurui.com; las formas de los símbolos son imágenes y no se extraen)",
+          "url": "https://kikakurui.com/c0/C0303-2000-01.html"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-069",
@@ -838,19 +1938,57 @@
       "uso": "Es el 傍記 junto al símbolo de ルームエアコン en 配線図.",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "JIS C 0303:2000 (texto en kikakurui.com; las formas de los símbolos son imágenes y no se extraen)",
+          "url": "https://kikakurui.com/c0/C0303-2000-01.html"
+        },
+        {
+          "texto": "eleking.net 配線図の図記号 (2種 学科)",
+          "url": "https://eleking.net/k21/k21i/k21i-symbol.html"
+        },
+        {
+          "texto": "HOZAN 第二種電工試験の虎 配線図記号2 (スイッチ)",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1kigou2/"
+        }
+      ],
+      "verificacion": "fuente"
     },
     {
       "id": "d2k-070",
       "categoria": "図記号・傍記",
-      "termino": "20A / 2P / 2（コンセント傍記）",
-      "lectura": "にじゅうアンペア / にきょく / にこう",
-      "es": "20 A / 2 polos / 2 tomas",
-      "significado": "Enchufe de 20 A / de 2 polos / doble (2口).",
-      "uso": "Sin indicación, la コンセント es de 15 A. Un número solo (2, 3…) indica el número de tomas (口数). Se pregunta junto con el 配線用遮断器 del 分岐回路.",
+      "termino": "20A / 250V / 3P / 2（コンセント傍記）",
+      "lectura": "にじゅうアンペア / にひゃくごじゅうボルト / さんきょく / にこう",
+      "es": "20 A / 250 V / 3 polos / 2 tomas",
+      "significado": "Enchufe de 20 A / de 250 V (circuito de 200 V) / de 3 polos / doble (2口).",
+      "uso": "Sin indicación, la コンセント es de 15 A 125 V y 2 polos. Solo se anota lo que se sale de eso: 20A o más, 250V o más, 3P o más polos y el número de tomas (2, 3…). Se pregunta junto con el 配線用遮断器 del 分岐回路 (電技解釈 第149条).",
       "verificar": false,
       "nota": "",
-      "imagen": ""
+      "imagen": "",
+      "fuentes": [
+        {
+          "texto": "JIS C 0303:2000 (texto en kikakurui.com; las formas de los símbolos son imágenes y no se extraen)",
+          "url": "https://kikakurui.com/c0/C0303-2000-01.html"
+        },
+        {
+          "texto": "eleking.net 配線図の図記号 (2種 学科)",
+          "url": "https://eleking.net/k21/k21i/k21i-symbol.html"
+        },
+        {
+          "texto": "HOZAN 第二種電工試験の虎 配線図記号1 (コンセント)",
+          "url": "https://www.hozan.co.jp/corp/denko2/pg/1kigou1/"
+        },
+        {
+          "texto": "国交省 公共建築設備工事標準図: コンセント, '20A以上は傍記による' y '2個以上は傍記による'",
+          "url": "https://www.mlit.go.jp/common/001108579.pdf"
+        },
+        {
+          "texto": "電技解釈 第149条 tabla 149-3 (15A → コンセント ≤15 A; 配線用遮断器 20A → ≤20 A; 30A → 20–30 A; 40A → 30–40 A; 50A → 40–50 A)",
+          "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf"
+        }
+      ],
+      "verificacion": "fuente"
     }
   ]
 }

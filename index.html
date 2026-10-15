@@ -81,6 +81,14 @@
             <p class="card-meaning" id="c-meaning"></p>
             <p class="card-use"><strong>En el examen:</strong> <span id="c-use"></span></p>
             <p class="card-note" id="c-note" hidden></p>
+            <div class="card-src" id="c-src">
+              <p class="src-status" id="c-src-status"></p>
+              <details class="src-details" id="c-src-details">
+                <summary id="c-src-summary">Fuentes</summary>
+                <ul class="src-list" id="c-src-list"></ul>
+              </details>
+              <button class="link-btn report-btn" id="btn-report" type="button">Reportar error</button>
+            </div>
           </div>
         </article>
 
@@ -100,6 +108,15 @@
     <!-- Vista: progreso -->
     <section class="view" id="view-progreso" role="tabpanel" hidden>
       <div id="progreso-body"></div>
+      <div class="reports" id="reports">
+        <h3>Errores reportados <span id="reports-count">0</span></h3>
+        <p class="reports-empty" id="reports-empty">Si una tarjeta tiene algo mal, ábrela y toca «Reportar error». Aquí quedan para pasárselos a Claude.</p>
+        <ul class="reports-list" id="reports-list"></ul>
+        <div class="reports-actions" id="reports-actions" hidden>
+          <button class="btn btn-small" id="btn-reports-copy" type="button">Copiar reportes</button>
+          <button class="link-btn danger" id="btn-reports-clear" type="button">Borrar reportes</button>
+        </div>
+      </div>
       <button class="link-btn danger" id="btn-reset" type="button">Borrar progreso de este examen</button>
     </section>
 

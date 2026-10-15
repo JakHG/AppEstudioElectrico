@@ -1,10 +1,11 @@
 /* Estudio Eléctrico — lógica de la app (JS puro, sin dependencias) */
 'use strict';
 
-const APP_VERSION = '0.2.0';
+const APP_VERSION = '0.3.0';
 const META_RACHA = 2;   // aciertos seguidos para sacar una tarjeta de "No sé"
 const KEY_PROGRESS = 'aee.progress.v1';
 const KEY_SETTINGS = 'aee.settings.v1';
+const KEY_REPORTS = 'aee.reports.v1';
 
 /* ---------- Almacenamiento seguro ---------- */
 const store = {
@@ -36,7 +37,8 @@ const state = {
   flipped: false,
   view: 'tarjetas',
   settings: store.get(KEY_SETTINGS, { examId: 'denko2', lectura: false, categoria: '', modo: 'todas' }),
-  progress: store.get(KEY_PROGRESS, {})
+  progress: store.get(KEY_PROGRESS, {}),
+  reports: store.get(KEY_REPORTS, [])
 };
 
 const $ = (sel) => document.querySelector(sel);
@@ -268,6 +270,33 @@ function renderCard() {
   $('#btn-nose').hidden = state.revealing;
   $('#btn-next').hidden = !state.revealing;
 
+  // Verificación y fuentes
+  const fuentes = c.fuentes || [];
+  const status = $('#c-src-status');
+  if (c.verificacion === 'fuente') {
+    status.textContent = '✓ Verificado con fuente';
+    status.className = 'src-status ok';
+  } else if (c.verificacion === 'parcial') {
+    status.textContent = '⚠ Verificación parcial';
+    status.className = 'src-status warn';
+  } else {
+    status.textContent = '⚠ Sin verificar';
+    status.className = 'src-status warn';
+  }
+  $('#c-src-summary').textContent = `Fuentes (${fuentes.length})`;
+  $('#c-src-details').hidden = fuentes.length === 0;
+  $('#c-src-details').open = false;
+  const list = $('#c-src-list');
+  list.innerHTML = '';
+  fuentes.forEach((f) => {
+    const li = el('li');
+    if (f.url) li.appendChild(el('a', { href: f.url, target: '_blank', rel: 'noopener' }, f.texto));
+    else li.textContent = f.texto;
+    list.appendChild(li);
+  });
+  const ya = state.reports.some((r) => r.id === c.id);
+  $('#btn-report').textContent = ya ? 'Error reportado ✓ (agregar otro)' : 'Reportar error';
+
   const note = $('#c-note');
   note.textContent = c.nota ? '⚠ ' + c.nota : '';
   note.hidden = !c.nota;
@@ -306,6 +335,47 @@ function next() {
   renderCard();
 }
 
+/* ---------- Reportes de error ---------- */
+function reportar() {
+  const c = state.deck[state.pos];
+  if (!c) return;
+  const texto = prompt(`¿Qué está mal en «${c.termino}»?\n(término, lectura, significado, uso o símbolo)`);
+  if (!texto || !texto.trim()) return;
+  state.reports.push({
+    id: c.id,
+    termino: c.termino,
+    texto: texto.trim(),
+    fecha: new Date().toISOString().slice(0, 10)
+  });
+  store.set(KEY_REPORTS, state.reports);
+  renderCard();
+}
+
+function renderReports() {
+  const list = $('#reports-list');
+  list.innerHTML = '';
+  $('#reports-count').textContent = String(state.reports.length);
+  $('#reports-empty').hidden = state.reports.length > 0;
+  $('#reports-actions').hidden = state.reports.length === 0;
+  state.reports.forEach((r) => {
+    const li = el('li');
+    li.appendChild(el('b', {}, `${r.id} · ${r.termino}`));
+    li.appendChild(el('span', {}, r.texto));
+    list.appendChild(li);
+  });
+}
+
+async function copiarReportes() {
+  const txt = state.reports.map((r) => `- ${r.id} (${r.termino}) [${r.fecha}]: ${r.texto}`).join('\n');
+  try {
+    await navigator.clipboard.writeText('Errores reportados en la app:\n' + txt);
+    $('#btn-reports-copy').textContent = 'Copiado ✓';
+    setTimeout(() => { $('#btn-reports-copy').textContent = 'Copiar reportes'; }, 1500);
+  } catch (e) {
+    prompt('Copia este texto:', txt);
+  }
+}
+
 /* ---------- Vistas ---------- */
 function setView(view) {
   state.view = view;
@@ -319,7 +389,7 @@ function renderView() {
   ['tarjetas', 'progreso', 'enlaces', 'pronto'].forEach((v) => {
     $('#view-' + v).hidden = v !== state.view;
   });
-  if (state.view === 'progreso') renderProgress();
+  if (state.view === 'progreso') { renderProgress(); renderReports(); }
   if (state.view === 'enlaces') renderLinks();
 }
 
@@ -411,6 +481,16 @@ function bindUI() {
   $('#btn-se').addEventListener('click', () => answer('se'));
   $('#btn-nose').addEventListener('click', () => answer('nose'));
   $('#btn-next').addEventListener('click', next);
+  // Dentro del reverso: no girar la tarjeta al tocar fuentes o reportar
+  $('#c-src').addEventListener('click', (e) => e.stopPropagation());
+  $('#btn-report').addEventListener('click', reportar);
+  $('#btn-reports-copy').addEventListener('click', copiarReportes);
+  $('#btn-reports-clear').addEventListener('click', () => {
+    if (!confirm('¿Borrar todos los reportes?')) return;
+    state.reports = [];
+    store.set(KEY_REPORTS, state.reports);
+    renderReports();
+  });
   $('#btn-barajar').addEventListener('click', buildDeck);
   $('#btn-reiniciar').addEventListener('click', () => {
     state.settings.modo = 'todas';

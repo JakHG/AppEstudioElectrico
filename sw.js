@@ -1,11 +1,11 @@
 /* Service worker — Estudio Eléctrico
  * Subir CACHE_VERSION en cada cambio de archivos del app shell para que el celular reciba la versión nueva.
  */
-const CACHE_VERSION = 'v3';
+const CACHE_VERSION = 'v4';
 const SHELL_CACHE = 'aee-shell-' + CACHE_VERSION;
 const DATA_CACHE = 'aee-data-' + CACHE_VERSION;
 
-const SHELL = ['./', 'index.html', 'styles.css', 'app.js', 'manifest.json', 'icons/icon.svg', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-maskable-512.png', 'icons/apple-touch-icon.png', 'img/simbolos/denryokuryoukei.svg', 'img/simbolos/haisenyou-shadanki.svg', 'img/simbolos/kaiheiki.svg', 'img/simbolos/rouden-shadanki.svg', 'img/simbolos/tenmetsuki-3ro.svg', 'img/simbolos/tenmetsuki-4ro.svg', 'img/simbolos/tenmetsuki-a.svg', 'img/simbolos/tenmetsuki-d.svg', 'img/simbolos/tenmetsuki-h.svg', 'img/simbolos/tenmetsuki-l.svg', 'img/simbolos/tenmetsuki-ras.svg', 'img/simbolos/tenmetsuki-t.svg', 'img/simbolos/tenmetsuki.svg'];
+const SHELL = ['./', 'index.html', 'styles.css', 'app.js', 'manifest.json', 'icons/icon.svg', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-maskable-512.png', 'icons/apple-touch-icon.png', 'img/simbolos/denryokuryoukei.svg', 'img/simbolos/haisenyou-shadanki.svg', 'img/simbolos/kaiheiki.svg', 'img/simbolos/rouden-shadanki.svg', 'img/simbolos/tenmetsuki-3ro.svg', 'img/simbolos/tenmetsuki-4ro.svg', 'img/simbolos/tenmetsuki-a.svg', 'img/simbolos/tenmetsuki-d.svg', 'img/simbolos/tenmetsuki-h.svg', 'img/simbolos/tenmetsuki-l.svg', 'img/simbolos/tenmetsuki-ras.svg', 'img/simbolos/tenmetsuki-t.svg', 'img/simbolos/tenmetsuki.svg', 'img/simbolos/rimokon-relay.svg'];
 const DATA = ['data/exams.json', 'data/denko2-kanbetsu.json'];
 
 self.addEventListener('install', (event) => {

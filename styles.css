@@ -441,6 +441,57 @@ main {
 .bar i { display: block; height: 100%; }
 .bar .b-se { background: var(--se); box-shadow: 0 0 10px var(--se-glow); }
 .bar .b-nose { background: var(--nose); }
+.card-src {
+  margin-top: 6px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: default;
+}
+.src-status { margin: 0; font-size: .8rem; font-family: var(--mono); }
+.src-status.ok { color: var(--se); }
+.src-status.warn { color: var(--warn); }
+.src-details summary {
+  font-size: .82rem;
+  color: var(--muted);
+  cursor: pointer;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+}
+.src-list { margin: 4px 0 0; padding-left: 18px; font-size: .82rem; }
+.src-list li { margin-bottom: 6px; }
+.src-list a { color: #9fc4ff; overflow-wrap: anywhere; }
+.report-btn { align-self: flex-start; color: var(--muted); padding: 6px 0; }
+
+.reports { margin-top: 22px; padding-top: 14px; border-top: 1px solid var(--line); }
+.reports h3 {
+  margin: 0 0 6px;
+  font-size: .72rem;
+  font-family: var(--mono);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.reports h3 span { color: var(--warn); }
+.reports-empty { margin: 0; font-size: .85rem; color: var(--muted); }
+.reports-list { list-style: none; margin: 0 0 10px; padding: 0; }
+.reports-list li {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 12px;
+  margin-bottom: 6px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  font-size: .9rem;
+}
+.reports-list b { font-size: .78rem; font-family: var(--mono); color: var(--warn); font-weight: 600; }
+.reports-actions { display: flex; align-items: center; gap: 16px; }
+.btn-small { min-height: 44px; padding: 0 16px; font-size: .9rem; color: var(--accent); border-color: var(--accent); }
+
 .prog-note { margin: -6px 0 16px; font-size: .82rem; color: var(--muted); }
 .cat-row { display: flex; justify-content: space-between; font-size: .92rem; }
 .cat-row span:last-child { font-family: var(--mono); color: var(--muted); }
