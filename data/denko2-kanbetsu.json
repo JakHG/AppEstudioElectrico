@@ -452,8 +452,8 @@
       "es": "Interruptor termomagnético",
       "significado": "Interruptor termomagnético (MCCB / breaker).",
       "uso": "Símbolo: cuadro con B. Aparece en preguntas de 分岐回路 (relación entre corriente nominal, sección del cable y コンセント).",
-      "verificar": false,
-      "nota": "",
+      "verificar": true,
+      "nota": "Forma del símbolo (cuadro con B) dibujada de memoria; falta confirmarla con JIS C 0303 o con un 配線図 oficial.",
       "imagen": "img/simbolos/haisenyou-shadanki.svg"
     },
     {
@@ -464,8 +464,8 @@
       "es": "Interruptor diferencial",
       "significado": "Interruptor diferencial (ELCB).",
       "uso": "Símbolo: cuadro con E. Para protección de personas se usa uno de 定格感度電流 30 mA y de 動作時間 0,1 s como máximo (高感度高速形).",
-      "verificar": false,
-      "nota": "",
+      "verificar": true,
+      "nota": "Forma del símbolo (cuadro con E) dibujada de memoria; falta confirmarla con JIS C 0303 o con un 配線図 oficial.",
       "imagen": "img/simbolos/rouden-shadanki.svg"
     },
     {
@@ -476,8 +476,8 @@
       "es": "Seccionador",
       "significado": "Seccionador o interruptor (sin protección).",
       "uso": "Símbolo: cuadro con S. No hay que confundirlo con B (配線用遮断器) ni con E (漏電遮断器).",
-      "verificar": false,
-      "nota": "",
+      "verificar": true,
+      "nota": "Forma del símbolo (cuadro con S) dibujada de memoria; falta confirmarla con JIS C 0303 o con un 配線図 oficial.",
       "imagen": "img/simbolos/kaiheiki.svg"
     },
     {
@@ -488,8 +488,8 @@
       "es": "Medidor de energía",
       "significado": "Medidor de energía (kWh).",
       "uso": "Símbolo: cuadro con Wh. Suele estar en la acometida del 配線図.",
-      "verificar": false,
-      "nota": "",
+      "verificar": true,
+      "nota": "Forma del símbolo (cuadro con Wh) dibujada de memoria; falta confirmarla con JIS C 0303 o con un 配線図 oficial.",
       "imagen": "img/simbolos/denryokuryoukei.svg"
     },
     {
@@ -740,8 +740,8 @@
       "es": "Interruptor con sensor de presencia",
       "significado": "Interruptor automático con sensor infrarrojo de presencia.",
       "uso": "En 配線図 se distingue de ●A (自動点滅器, que funciona con luz) y de ●D (遅延).",
-      "verificar": false,
-      "nota": "",
+      "verificar": true,
+      "nota": "El 傍記 RAS no aparece en la tabla de fabricante consultada; falta confirmarlo con JIS C 0303.",
       "imagen": "img/simbolos/tenmetsuki-ras.svg"
     },
     {
