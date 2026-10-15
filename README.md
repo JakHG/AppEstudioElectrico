@@ -50,6 +50,7 @@ URL: `https://jakhg.github.io/AppEstudioElectrico/`. Todas las rutas son relativ
   "categoria": "工具 | 材料 | 器具 | 測定器 | 図記号・傍記",
   "termino": "término en japonés",
   "lectura": "lectura en kana",
+  "es": "término corto en español",
   "significado": "significado en español",
   "uso": "cómo aparece en el examen",
   "verificar": false,
@@ -62,7 +63,13 @@ URL: `https://jakhg.github.io/AppEstudioElectrico/`. Todas las rutas son relativ
 
 ## Progreso (localStorage)
 
-- `aee.progress.v1` → `{ examen: { tema: { idTarjeta: { estado: "se" | "nose", veces, ultima } } } }`
+- `aee.progress.v1` → `{ examen: { tema: { idTarjeta: { estado: "se" | "nose", racha, veces, fallos, ultima } } } }`
+
+## Repaso
+
+- **No sé** → muestra la respuesta (término en español, lectura, significado, uso) y la tarjeta vuelve unas 4 tarjetas después.
+- Una tarjeta "por aprender" pasa a "sé" solo con 2 aciertos seguidos (`META_RACHA` en `app.js`). Tras el primer acierto vuelve unas 8 tarjetas después.
+- Al abrir, el mazo empieza por las "por aprender" (las más falladas primero), luego las nuevas y al final las que ya sabes.
 - `aee.settings.v1` → examen elegido y filtros
 
 ## Reglas de contenido

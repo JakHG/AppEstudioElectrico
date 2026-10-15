@@ -263,9 +263,21 @@ main {
   border-radius: 999px;
   padding: 1px 10px;
 }
-.card-flag {
+.card-repaso {
   position: absolute;
   top: 12px;
+  right: 14px;
+  font-size: .72rem;
+  font-family: var(--mono);
+  color: var(--nose);
+  background: rgba(255, 77, 94, .08);
+  border: 1px solid rgba(255, 77, 94, .4);
+  border-radius: 999px;
+  padding: 1px 10px;
+}
+.card-flag {
+  position: absolute;
+  top: 38px;
   right: 14px;
   font-size: .72rem;
   color: var(--warn);
@@ -302,7 +314,23 @@ main {
   animation: reveal .25s ease-out;
 }
 .card-back-term { margin: 0; font-size: 1.35rem; font-weight: 800; }
-.card-meaning { margin: 0; font-size: 1.15rem; font-weight: 700; color: var(--accent); }
+.card-es {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--accent);
+  text-shadow: 0 0 16px rgba(255, 212, 0, .25);
+}
+.card-revela {
+  margin: 0 0 4px;
+  font-size: .72rem;
+  font-family: var(--mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--nose);
+}
+.card-meaning { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); }
 .card-use { margin: 0; font-size: .95rem; color: #d3d6dc; }
 .card-use strong { color: var(--text); }
 .card-note {
@@ -353,6 +381,13 @@ main {
 .btn-se:active { background: var(--se); color: #000; box-shadow: 0 0 24px var(--se-glow); }
 .btn-nose:active { background: var(--nose); color: #000; box-shadow: 0 0 24px var(--nose-glow); }
 .btn:active { transform: scale(.98); }
+.btn-next {
+  grid-column: 1 / -1;
+  color: #000;
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 22px var(--accent-glow);
+}
 @media (hover: hover) {
   .btn-se:hover { box-shadow: 0 0 20px var(--se-glow); }
   .btn-nose:hover { box-shadow: 0 0 20px var(--nose-glow); }
@@ -406,6 +441,7 @@ main {
 .bar i { display: block; height: 100%; }
 .bar .b-se { background: var(--se); box-shadow: 0 0 10px var(--se-glow); }
 .bar .b-nose { background: var(--nose); }
+.prog-note { margin: -6px 0 16px; font-size: .82rem; color: var(--muted); }
 .cat-row { display: flex; justify-content: space-between; font-size: .92rem; }
 .cat-row span:last-child { font-family: var(--mono); color: var(--muted); }
 

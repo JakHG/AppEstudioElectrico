@@ -1,7 +1,7 @@
 /* Service worker — Estudio Eléctrico
  * Subir CACHE_VERSION en cada cambio de archivos del app shell para que el celular reciba la versión nueva.
  */
-const CACHE_VERSION = 'v2';
+const CACHE_VERSION = 'v3';
 const SHELL_CACHE = 'aee-shell-' + CACHE_VERSION;
 const DATA_CACHE = 'aee-data-' + CACHE_VERSION;
 

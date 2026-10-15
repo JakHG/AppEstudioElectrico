@@ -1,7 +1,8 @@
 /* Estudio Eléctrico — lógica de la app (JS puro, sin dependencias) */
 'use strict';
 
-const APP_VERSION = '0.1.1';
+const APP_VERSION = '0.2.0';
+const META_RACHA = 2;   // aciertos seguidos para sacar una tarjeta de "No sé"
 const KEY_PROGRESS = 'aee.progress.v1';
 const KEY_SETTINGS = 'aee.settings.v1';
 
@@ -53,15 +54,27 @@ function temaProgress(examId, temaId) {
   return state.progress[examId][temaId];
 }
 
-function marcar(card, estado) {
+/* Registra la respuesta y devuelve el registro actualizado.
+ * - "No sé": la tarjeta queda "por aprender" (estado nose) y su racha vuelve a 0.
+ * - "Sé": suma racha. Si la tarjeta estaba por aprender, solo pasa a "sé"
+ *   después de META_RACHA aciertos seguidos. Una tarjeta nueva que ya sabes pasa directo. */
+function marcar(card, respuesta) {
   const p = temaProgress(state.examId, state.temaId);
-  const prev = p[card.id] || { veces: 0 };
+  const prev = p[card.id] || { veces: 0, racha: 0, fallos: 0 };
+  const racha = respuesta === 'se' ? (prev.racha || 0) + 1 : 0;
+  let estado;
+  if (respuesta === 'nose') estado = 'nose';
+  else if (prev.estado === 'nose' && racha < META_RACHA) estado = 'nose';
+  else estado = 'se';
   p[card.id] = {
     estado,
-    veces: prev.veces + 1,
+    racha,
+    veces: (prev.veces || 0) + 1,
+    fallos: (prev.fallos || 0) + (respuesta === 'nose' ? 1 : 0),
     ultima: new Date().toISOString().slice(0, 10)
   };
   store.set(KEY_PROGRESS, state.progress);
+  return p[card.id];
 }
 
 /* ---------- Carga de datos ---------- */
@@ -180,10 +193,26 @@ function buildDeck() {
     if (modo === 'nose') return p[c.id] && p[c.id].estado === 'nose';
     return true;
   });
-  state.deck = shuffle(filtered);
+  // Orden: primero las "por aprender" (las más falladas antes), luego las nuevas, al final las que ya sabes.
+  const porAprender = shuffle(filtered.filter((c) => p[c.id] && p[c.id].estado === 'nose'))
+    .sort((a, b) => (p[b.id].fallos || 0) - (p[a.id].fallos || 0));
+  const nuevas = shuffle(filtered.filter((c) => !p[c.id]));
+  const sabidas = shuffle(filtered.filter((c) => p[c.id] && p[c.id].estado === 'se'));
+  state.deck = [...porAprender, ...nuevas, ...sabidas];
   state.pos = 0;
   state.flipped = false;
+  state.revealing = false;
   renderCard();
+}
+
+/* Vuelve a meter la tarjeta en el mazo unas posiciones más adelante. */
+function requeue(card, gap) {
+  // Quitar una copia pendiente para no duplicarla
+  for (let i = state.deck.length - 1; i > state.pos; i--) {
+    if (state.deck[i].id === card.id) state.deck.splice(i, 1);
+  }
+  const at = Math.min(state.pos + 1 + gap, state.deck.length);
+  state.deck.splice(at, 0, card);
 }
 
 /* ---------- Tarjeta ---------- */
@@ -202,6 +231,10 @@ function renderCard() {
 
   $('#c-cat').textContent = c.categoria;
   $('#c-flag').hidden = !c.verificar;
+  const reg = temaProgress(state.examId, state.temaId)[c.id];
+  const repaso = $('#c-repaso');
+  repaso.hidden = !(reg && reg.estado === 'nose');
+  if (reg && reg.estado === 'nose') repaso.textContent = `Repaso · ${reg.racha || 0}/${META_RACHA}`;
   // Tarjeta con símbolo: el frente muestra solo el dibujo (práctica de reconocimiento);
   // el nombre aparece al girarla.
   const soloSimbolo = Boolean(c.imagen);
@@ -223,25 +256,53 @@ function renderCard() {
     img.hidden = true;
   }
 
+  $('#c-revela').hidden = !state.revealing;
+  $('#c-es').textContent = c.es || '';
   $('#c-reading').textContent = c.lectura;
   $('#c-meaning').textContent = c.significado;
+  // Si el significado solo repite el término en español, no mostrarlo dos veces
+  const norm = (t) => (t || '').replace(/[.。]\s*$/, '').trim().toLowerCase();
+  $('#c-meaning').hidden = norm(c.significado) === norm(c.es);
   $('#c-use').textContent = c.uso;
+  $('#btn-se').hidden = state.revealing;
+  $('#btn-nose').hidden = state.revealing;
+  $('#btn-next').hidden = !state.revealing;
+
   const note = $('#c-note');
   note.textContent = c.nota ? '⚠ ' + c.nota : '';
   note.hidden = !c.nota;
 }
 
 function flip() {
+  if (state.revealing) return;
   state.flipped = !state.flipped;
   renderCard();
 }
 
-function answer(estado) {
+function answer(respuesta) {
   const c = state.deck[state.pos];
-  if (!c) return;
-  marcar(c, estado);
+  if (!c || state.revealing) return;
+  const reg = marcar(c, respuesta);
+
+  if (respuesta === 'nose') {
+    requeue(c, 4);                 // vuelve pronto
+    if (!state.flipped) {          // mostrar qué es antes de seguir
+      state.flipped = true;
+      state.revealing = true;
+      renderCard();
+      $('#card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+  } else if (reg.estado === 'nose') {
+    requeue(c, 8);                 // la estás aprendiendo: vuelve más tarde
+  }
+  next();
+}
+
+function next() {
   state.pos += 1;
   state.flipped = false;
+  state.revealing = false;
   renderCard();
 }
 
@@ -285,7 +346,7 @@ function renderProgress() {
 
   const t = count(state.cards);
   const grid = el('div', { class: 'stat-grid' });
-  [['se', t.se, 'Sé'], ['nose', t.nose, 'No sé'], ['', t.sin, 'Sin ver']].forEach(([cls, n, label]) => {
+  [['se', t.se, 'Sé'], ['nose', t.nose, 'Por aprender'], ['', t.sin, 'Sin ver']].forEach(([cls, n, label]) => {
     const s = el('div', { class: 'stat ' + cls });
     s.appendChild(el('b', {}, String(n)));
     s.appendChild(el('span', {}, label));
@@ -293,6 +354,8 @@ function renderProgress() {
   });
   body.appendChild(grid);
   body.appendChild(makeBar(t));
+  body.appendChild(el('p', { class: 'prog-note' },
+    `Una tarjeta que marcas No sé vuelve a salir hasta que aciertes ${META_RACHA} veces seguidas.`));
 
   const cats = [...new Set(state.cards.map((c) => c.categoria))];
   cats.forEach((cat) => {
@@ -347,6 +410,7 @@ function bindUI() {
   });
   $('#btn-se').addEventListener('click', () => answer('se'));
   $('#btn-nose').addEventListener('click', () => answer('nose'));
+  $('#btn-next').addEventListener('click', next);
   $('#btn-barajar').addEventListener('click', buildDeck);
   $('#btn-reiniciar').addEventListener('click', () => {
     state.settings.modo = 'todas';
@@ -386,6 +450,7 @@ function bindUI() {
   // Teclado en escritorio: ← no sé, → sé, espacio gira
   document.addEventListener('keydown', (e) => {
     if (state.view !== 'tarjetas' || e.target.tagName === 'SELECT') return;
+    if (state.revealing && (e.key === 'Enter' || e.key === 'ArrowRight')) { next(); return; }
     if (e.key === 'ArrowLeft') answer('nose');
     if (e.key === 'ArrowRight') answer('se');
   });

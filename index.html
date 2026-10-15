@@ -49,7 +49,7 @@
             <select id="f-modo">
               <option value="todas">Todas</option>
               <option value="sinver">Sin ver</option>
-              <option value="nose">No sé</option>
+              <option value="nose">Por aprender</option>
             </select>
           </label>
           <label class="switch">
@@ -66,6 +66,7 @@
         <article class="card" id="card" tabindex="0" aria-live="polite">
           <div class="card-face card-front">
             <span class="card-cat" id="c-cat"></span>
+            <span class="card-repaso" id="c-repaso" hidden></span>
             <span class="card-flag" id="c-flag" hidden title="Contenido a verificar">⚠ verificar</span>
             <img class="card-img" id="c-img" alt="" hidden>
             <p class="card-term" id="c-term"></p>
@@ -73,6 +74,8 @@
             <p class="card-hint" id="c-hint">Toca para ver la respuesta</p>
           </div>
           <div class="card-face card-back" hidden>
+            <p class="card-revela" id="c-revela" hidden>Repásala: volverá a salir en unas tarjetas</p>
+            <p class="card-es" id="c-es"></p>
             <p class="card-back-term" id="c-term-back" hidden></p>
             <p class="card-reading" id="c-reading"></p>
             <p class="card-meaning" id="c-meaning"></p>
@@ -84,6 +87,7 @@
         <div class="answer-bar">
           <button class="btn btn-nose" id="btn-nose" type="button">No sé</button>
           <button class="btn btn-se" id="btn-se" type="button">Sé</button>
+          <button class="btn btn-next" id="btn-next" type="button" hidden>Entendido · siguiente →</button>
         </div>
 
         <div class="empty" id="deck-done" hidden>
