@@ -1,7 +1,7 @@
 /* Estudio Eléctrico — lógica de la app (JS puro, sin dependencias) */
 'use strict';
 
-const APP_VERSION = '0.1.0';
+const APP_VERSION = '0.1.1';
 const KEY_PROGRESS = 'aee.progress.v1';
 const KEY_SETTINGS = 'aee.settings.v1';
 
